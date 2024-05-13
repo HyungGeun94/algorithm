@@ -1,27 +1,28 @@
 class Solution {
     public int solution(int num) {
         
+        long lNum = num;
         int answer = 0;
         
-        while(num!=1){
+        while(lNum!=1){
             
-            if(num%2==0){
-                num/=2;
+            if(lNum%2==0){
+                lNum/=2;
                 answer++;
 
             }else{
-                num= (num *3) +1;
+                lNum= (lNum *3) +1;
                 answer++;
             }
             
             
-            if(answer>400){
+            if(answer>500){
                 break;
             }
         
             
         }
         
-        return answer>400 ? -1 : answer;
+        return answer>500 ? -1 : answer;
     }
 }
