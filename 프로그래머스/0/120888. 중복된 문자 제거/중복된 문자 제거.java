@@ -12,7 +12,9 @@ class Solution {
             if(!list.contains(s)){
             list.add(s);}
         }
+        
         StringBuffer sb = new StringBuffer();
+        
         for (String s : list) {
 
             sb.append(s);
