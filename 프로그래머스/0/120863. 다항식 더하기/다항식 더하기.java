@@ -1,16 +1,44 @@
 class Solution {
     public String solution(String polynomial) {
-        int xNum = 0; int num = 0;
 
-        for (String s : polynomial.split(" ")) {
-            if (s.contains("x")) 
-                xNum += s.equals("x") ? 1 : Integer.parseInt(s.replaceAll("x", ""));
-            else if (!s.equals("+"))
-                num += Integer.parseInt(s);
+        int x = 0;
+        int y = 0;
+        String answer = "";
+
+        for(String str : polynomial.split(" ")) {
+
+            if(str.equals("+")) {
+                continue;
+            }
+
+            if(str.contains("x")) {
+
+                if(str.equals("x")) {
+                    x += 1;
+                } else {
+                    x += Integer.parseInt(str.replace("x", ""));   
+                }
+
+            } else {
+                y += Integer.parseInt(str);
+
+            }
         }
-        
-        return (xNum != 0 ? xNum > 1 ? xNum + "x" : "x" : "") 
-        		+ (num != 0 ? (xNum != 0 ? " + " : "") 
-                + num : xNum == 0 ? "0" : "");
+
+        if (x > 0) {
+
+            answer = (x == 1 ? "x" : Integer.toString(x) + "x");
+
+            if (y > 0) {
+                answer = answer + " + ";
+            }
+        }
+
+        if (y > 0) {
+
+            answer = answer + Integer.toString(y);
+        }
+
+        return answer;
     }
 }
