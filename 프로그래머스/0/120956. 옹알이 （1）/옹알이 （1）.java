@@ -1,17 +1,19 @@
-import java.util.regex.Pattern;
-
 class Solution {
-    public int solution(String[] babbling) {
+     public static int solution(String[] babbling) {
         int answer = 0;
-        
-        Pattern pattern = Pattern.compile("^(aya|ye|woo|ma)+$");
-        
-        for (String word : babbling) {
-            if (pattern.matcher(word).matches()) {
-                answer++;
+        String[] len = new String[]{"aya", "ye", "woo", "ma"};
+
+        for (int i = 0; i < babbling.length; i++) {
+            for (int j = 0; j < len.length; j++) {
+                babbling[i] = babbling[i].replace(len[j], " ");
+            }
+
+            if ("".equals(babbling[i].trim())){
+                answer = answer + 1;
             }
         }
-        
         return answer;
     }
+
+
 }
