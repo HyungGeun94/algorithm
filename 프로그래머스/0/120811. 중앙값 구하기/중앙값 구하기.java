@@ -1,11 +1,9 @@
 import java.util.*;
 
-
 class Solution {
     public int solution(int[] array) {
-        
         Arrays.sort(array);
-        
-        return array[array.length/2];
+        int answer = array[array.length/2];
+        return answer;
     }
 }
