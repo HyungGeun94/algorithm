@@ -1,11 +1,13 @@
 class Solution {
     public int solution(int[] array, int height) {
         int answer = 0;
-        for(int arr : array){
-            if(arr>height){
+        
+        for(int i: array){
+            if(height<i){
                 answer++;
             }
         }
+        
         return answer;
     }
 }
