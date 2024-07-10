@@ -1,23 +1,20 @@
 class Solution {
     public String solution(String my_string) {
-
-       
-                StringBuffer sb = new StringBuffer();
+        String answer = "";
         
-        for(char c : my_string.toCharArray()){
-        
+        for(int i=0; i<my_string.length(); i++){
+            char ch = my_string.charAt(i);
             
-            if(c>='a' && c<='z'){
-                 sb.append((c+"").toUpperCase());
+            if(ch>='a' && ch<='z'){
+                
+                answer +=(ch+"").toUpperCase();
+            }else if(ch>='A' && ch<='Z'){
+                
+                answer +=(ch+"").toLowerCase();
             }
-            else if(c>='A' &&c<='Z'){
-                 sb.append((c+"").toLowerCase());
-            }
+            
         }
         
-                return sb.toString();
-
-    }        
-
+        return answer;
+    }
 }
-        
