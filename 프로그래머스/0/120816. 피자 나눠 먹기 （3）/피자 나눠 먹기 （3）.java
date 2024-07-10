@@ -1,5 +1,18 @@
 class Solution {
     public int solution(int slice, int n) {
-        return n%slice==0 ? n/slice : n/slice+1;
+        
+        int answer=1;
+        int plus=slice;
+        
+        while(slice<n){
+            
+            slice+=plus;
+            answer++;
+            
+        }
+        
+        
+        return answer;
+
     }
 }
