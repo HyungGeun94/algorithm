@@ -1,19 +1,27 @@
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Collections;
-import java.util.List;
-
-
 class Solution {
     public int[] solution(int[] array) {
-
-        List<Integer> list = new ArrayList<>(Arrays.asList(
-            Arrays.stream(array).boxed().toArray(Integer[]::new)));
+        int[] answer = new int[2];
         
-        int max = Collections.max(list);
 
-        int index = list.indexOf(max);
-                     
-        return new int[]{max,index};
+        int max = array[0];
+        
+        for(int i=1; i<array.length; i++){
+            
+            if (array[i]>max ){
+                
+                max=array[i];
+                
+                answer[0]=max;
+                answer[1]=i;
+                
+            }
+            
+            
+        }
+        
+
+        
+        
+        return answer;
     }
 }
