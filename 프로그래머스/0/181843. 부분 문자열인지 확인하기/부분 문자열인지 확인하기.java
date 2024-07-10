@@ -1,5 +1,11 @@
 class Solution {
     public int solution(String my_string, String target) {
-        return my_string.contains(target) ? 1 : 0;
+        int answer = 0;
+        
+        if(my_string.contains(target)){
+            answer=1;
+        }
+        
+        return answer;
     }
 }
