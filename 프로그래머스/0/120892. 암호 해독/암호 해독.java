@@ -1,14 +1,15 @@
 class Solution {
     public String solution(String cipher, int code) {
+        String answer = "";
         
-        StringBuffer sb = new StringBuffer();
-
-        char[] ch = cipher.toCharArray();
-        
-        for(int i=code-1 ; i<ch.length; i+=code){
-            sb.append(ch[i]);
+        for(int i=code-1; i<cipher.length(); i+=code){
+            
+            answer+=cipher.charAt(i);
+            
+            
         }
         
-        return new String(sb);
+        
+        return answer;
     }
 }
