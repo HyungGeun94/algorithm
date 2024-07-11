@@ -1,5 +1,16 @@
 class Solution {
     public int solution(int n, int t) {
-        return (int)(n*(Math.pow(2,t)));
+        int answer = n;
+        
+        for(int i=1; i<=t; i++){
+            
+            answer *= 2;
+            
+            
+        }
+        
+        
+        
+        return answer;
     }
 }
