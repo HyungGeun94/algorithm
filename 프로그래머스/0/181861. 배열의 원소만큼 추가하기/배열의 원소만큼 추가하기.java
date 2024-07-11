@@ -1,32 +1,29 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 class Solution {
     public int[] solution(int[] arr) {
         
         List<Integer> list = new ArrayList<>();
-
-        for (int i : arr) {
-            
-            for(int j=1; j<=i; j++){
-                list.add(i);
-            }
-        }
-
-        int[] newArr = new int[list.size()];
         
-        for(int i=0; i<list.size(); i++){
-            newArr[i]=list.get(i);
+        for(int k : arr){
             
+            for(int i=1; i<=k;i++ ){
+                
+                list.add(k);   
+            }    
         }
-
         
-
-
-
-
-
-
-        return newArr;
+        int[] answer = new int[list.size()];
+        
+        for(int i=0 ;  i<answer.length; i++){
+            
+            
+            answer[i]=list.get(i);
+        }
+        
+        
+        
+        
+        return answer;
     }
 }
