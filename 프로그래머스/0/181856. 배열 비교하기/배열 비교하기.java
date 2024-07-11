@@ -17,11 +17,10 @@ class Solution {
             
             for(int i=0; i<length1; i++){
                 sum1+=arr1[i];
-            }
-            for(int i=0; i<length2; i++){
                 sum2+=arr2[i];
+
             }
-            
+
             return sum1 > sum2 ? 1 : sum1 == sum2 ? 0 : -1;
             
             
