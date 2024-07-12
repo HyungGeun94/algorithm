@@ -1,21 +1,25 @@
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-
 class Solution {
     public int[] solution(int[] num_list, int n) {
+        int[] answer = new int[num_list.length];
         
-        List<Integer> list = new ArrayList<>();
         
-        for(int i : num_list){
-            list.add(i);
+        for(int i=n; i<num_list.length; i++){
+            
+            
+            answer[i-n]=num_list[i];
+            
         }
         
-        Collections.rotate(list,list.size()-n);
+        int location = (num_list.length-n);
+        
+        for(int i=0; i<n; i++){
+            
+            
+            answer[location++]=num_list[i];
+        }
         
         
-        return list.stream()
-                .mapToInt(Integer::intValue)
-                .toArray();
+        
+        return answer;
     }
 }
