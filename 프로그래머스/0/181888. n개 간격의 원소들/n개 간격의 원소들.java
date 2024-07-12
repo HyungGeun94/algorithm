@@ -1,10 +1,28 @@
-import java.util.stream.IntStream;
+import java.util.*;
 
 class Solution {
     public int[] solution(int[] num_list, int n) {
-        return IntStream.range(0, num_list.length)
-                        .filter(i -> i % n == 0) 
-                        .map(i -> num_list[i]) 
-                        .toArray(); 
+        
+        List<Integer> list = new ArrayList<>();
+        
+        
+        for(int i=0; i<num_list.length; i+=n){
+            
+            list.add(num_list[i]);
+            
+        }
+        
+        int[] answer = new int[list.size()];
+        
+        for(int i=0; i<answer.length; i++){
+            
+            
+            answer[i] =list.get(i);
+        }
+        
+        
+        
+        
+        return answer;
     }
 }
