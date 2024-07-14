@@ -1,19 +1,20 @@
 class Solution {
     public int solution(int[] num_list) {
-        StringBuilder oddBuilder = new StringBuilder();
-        StringBuilder evenBuilder = new StringBuilder();
+        int answer = 0;
         
-        for(int i = 0; i < num_list.length; i++) {
-            if(num_list[i] % 2 == 0) {
-                evenBuilder.append(num_list[i]);
-            } else {
-                oddBuilder.append(num_list[i]);
+        String even ="";
+        String odd = "";
+        for(int i: num_list){
+            if(i%2==0){
+                
+                even+=i;
+            }else{
+                odd+=i;
+                
             }
         }
         
-        int oddSum = Integer.parseInt(oddBuilder.toString());
-        int evenSum = Integer.parseInt(evenBuilder.toString());
         
-        return oddSum + evenSum;
+        return Integer.parseInt(odd)+Integer.parseInt(even);
     }
 }
