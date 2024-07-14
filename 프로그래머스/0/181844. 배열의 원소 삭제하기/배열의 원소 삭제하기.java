@@ -1,29 +1,33 @@
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 class Solution {
     public int[] solution(int[] arr, int[] delete_list) {
         
-         List<Integer> list = new ArrayList<>();
+        List<Integer> list = new ArrayList<>();
         
-          for (int i : arr) {
+        
+        for(int i : arr){
+            
             list.add(i);
-            for (int j : delete_list) {
-                if(i==j){
-                    list.remove(new Integer(i));
-
-                }
+        }
+        
+            
+        for(int i : delete_list){
+            
+            if(list.contains(i)){
+                
+                list.remove(new Integer(i));
             }
         }
+    
+        
         
         int[] answer = new int[list.size()];
         
-        for(int i=0; i<list.size() ;i ++){
+        for(int i=0; i<answer.length; i++){
+            
             answer[i]=list.get(i);
-            
-            
         }
-        
         
         return answer;
     }
