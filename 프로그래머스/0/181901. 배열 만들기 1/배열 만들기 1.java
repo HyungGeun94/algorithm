@@ -1,13 +1,9 @@
+import java.util.stream.*;
+
+
 class Solution {
     public int[] solution(int n, int k) {
-        int[] answer = new int[n/k];
-        
-        for(int i=1,j=0; i<=n; i++){
-            if(i%k==0){
-                answer[j++]=i;
-            }
-        }
-        
-        return answer;
+  
+        return IntStream.rangeClosed(1, n).filter(i -> i % k == 0).toArray();
     }
 }
