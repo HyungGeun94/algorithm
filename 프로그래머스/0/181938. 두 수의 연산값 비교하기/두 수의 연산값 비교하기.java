@@ -1,5 +1,10 @@
 class Solution {
     public int solution(int a, int b) {
-        return Integer.parseInt(""+a+b) > 2*a*b ? Integer.parseInt(""+a+b) :  2*a*b  ;
+        int answer = 0;
+        
+        int sum= Integer.parseInt(""+a+b); 
+        int multi = 2*a*b;
+        
+        return sum > multi ? sum : multi;
     }
 }
