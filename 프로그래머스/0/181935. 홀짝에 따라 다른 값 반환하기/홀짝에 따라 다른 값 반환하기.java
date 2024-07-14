@@ -2,23 +2,26 @@ class Solution {
     public int solution(int n) {
         int answer = 0;
         
-        if(n%2==0){
+        if(n%2!=0){
             
-            for(int i=2; i<=n; i+=2){
-                answer = answer+ (int)Math.pow(i,2);
+            for(int i=1; i<=n; i+=2){
                 
+                answer+=i;
             }
-            
             
             
         }else{
             
-            for(int i=1; i<=n; i+=2){
-                answer+=i;
+            for(int i=2; i<=n; i+=2){
                 
+                answer+=(i*i);
             }
             
+            
+            
         }
+        
+        
         
         return answer;
     }
