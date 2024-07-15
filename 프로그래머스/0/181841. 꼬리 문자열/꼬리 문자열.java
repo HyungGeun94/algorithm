@@ -1,13 +1,15 @@
 class Solution {
     public String solution(String[] str_list, String ex) {
-        StringBuffer sb= new StringBuffer();
         
-        for(String str : str_list){
-            if(str.contains(ex)){
+        StringBuffer sb = new StringBuffer();
+        
+        for(int i=0; i<str_list.length; i++){
+            
+            if(!str_list[i].contains(ex)){
                 
-            }else{
-                sb.append(str);
+                sb.append(str_list[i]);
             }
+            
         }
         
         return sb.toString();
