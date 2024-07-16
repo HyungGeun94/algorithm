@@ -1,5 +1,11 @@
 class Solution {
     public int solution(int n) {
-        return (int)(Math.sqrt(n)) * (int)(Math.sqrt(n)) == n ? 1 : 2;
+        
+        int number = (int)Math.sqrt(n);
+        
+        
+        
+        
+        return Math.pow(number,2)== n ? 1 : 2;
     }
 }
