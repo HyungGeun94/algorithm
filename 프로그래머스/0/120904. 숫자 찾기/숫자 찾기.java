@@ -2,17 +2,20 @@ class Solution {
     public int solution(int num, int k) {
         int answer = -1;
         
-        String numStr = num+"";
+        String str = num+"";
         
-        for(int i=0; i<numStr.length(); i++){
+        
+        for(int i=0; i<str.length(); i++){
             
-            if(numStr.charAt(i)-'0'==k){
+            if(str.charAt(i)-'0'==k){
+                
                 answer=i+1;
                 break;
             }
             
             
         }
+        
         
         
         return answer;
