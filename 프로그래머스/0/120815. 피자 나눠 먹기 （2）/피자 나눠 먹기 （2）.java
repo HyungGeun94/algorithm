@@ -1,21 +1,18 @@
 class Solution {
     public int solution(int n) {
+        int answer = 1;
         
-        int answer=0;
         
-        for(int i=1; i<9999; i++){
-            int pizza =6*i;
-                        
-            
-            if(pizza%n==0){
-                answer=pizza/6;
-                break;
-            }
+        int pizza=6;
+        
+        while(pizza%n!=0){
+            answer++;
+            pizza+=6;
             
             
         }
-      
-        return answer;
         
+        
+        return answer;
     }
 }
