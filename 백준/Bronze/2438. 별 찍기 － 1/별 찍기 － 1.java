@@ -1,34 +1,23 @@
 import java.util.Scanner;
 
-public class Main {
-
+class Main {
     public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int size = in.nextInt();
 
-        for(int i=0; i<size; i++){
+        int number = scanner.nextInt();
 
-            for (int j = 0; j <=i ; j++) {
-
+        for(int i=1; i<=number; i++){
+            for(int j=1; j<=i; j++){
                 System.out.print("*");
-
             }
             System.out.println();
-
-
-
-
-
 
         }
 
 
 
 
-
-
-        in.close();
     }
 }
