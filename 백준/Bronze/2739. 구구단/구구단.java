@@ -1,24 +1,20 @@
 import java.util.Scanner;
- 
-public class Main {
- 
-	public static void main(String[] args) {
- 
-		Scanner in = new Scanner(System.in);
-		int A = in.nextInt();
-        
-        for(int i=1; i<=9 ; i++){
-            System.out.println(A+" * "+i +" = "+ A*i);
 
-            
+class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int number = scanner.nextInt();
+
+        for(int i=1; i<=9; i++){
+
+            System.out.println(number +" * "+i +" = "+ (number*i));
         }
-        
-        
 
-        
-        
-        
- 
-		in.close();
-	}
+
+
+
+
+
+    }
 }
