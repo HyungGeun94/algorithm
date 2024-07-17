@@ -1,13 +1,12 @@
 import java.util.Scanner;
- 
-public class Main {
- 
-	public static void main(String[] args) {
- 
-		Scanner scanner = new Scanner(System.in);
-		int A = scanner.nextInt();
-		int B = scanner.nextInt();
-        
+
+class Main {
+    public static void main(String[] args) {
+
+        Scanner scanner = new Scanner(System.in);
+        int A = scanner.nextInt();
+        int B = scanner.nextInt();
+
         if(A>B){
             System.out.println(">");
         }else if(A<B){
@@ -15,7 +14,11 @@ public class Main {
         }else{
             System.out.println("==");
         }
-        
-		scanner.close();
-	}
+
+
+
+
+
+
+    }
 }
