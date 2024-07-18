@@ -1,9 +1,7 @@
 import java.util.*;
 
-
-public class Main{
-
-    public static void main(String[] args){
+class Main {
+    public static void main(String[] args) {
 
         Scanner scanner = new Scanner(System.in);
 
@@ -13,4 +11,5 @@ public class Main{
         System.out.println(A+B);
 
     }
+
 }
