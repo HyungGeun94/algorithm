@@ -1,31 +1,22 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class Main {
-
+class Main {
     public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
 
-        int size = in.nextInt();
-        int comparedNum = in.nextInt();
-        
-        StringBuffer sb = new StringBuffer();
+        int size = scanner.nextInt();
+        int standard = scanner.nextInt();
 
+        int[] arr = new int[size];
 
-        for (int i = 0; i < size; i++) {
+        for(int i=0; i<arr.length; i++){
 
-            int comparingNum = in.nextInt();
-            if(comparedNum>comparingNum){
-                sb.append(comparingNum).append(" ");
-
-            }
-
+            arr[i] = scanner.nextInt();
         }
 
-        System.out.println(sb.toString().trim());
-
-
-
-        in.close();
+        Arrays.stream(arr)
+                .filter(i -> i < standard)
+                .forEach(i -> System.out.print(i+" "));
     }
 }
