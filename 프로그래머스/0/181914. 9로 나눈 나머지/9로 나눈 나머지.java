@@ -1,12 +1,13 @@
 class Solution {
     public int solution(String number) {
-        int sum=0;
+        int answer = 0;
         
-        for(char c : number.toCharArray()){
-            sum+=c-'0';
-            
+        for(int i=0; i<number.length(); i++){
+        
+            answer+=(number.charAt(i)-'0');
+        
         }
         
-        return sum%9;
+        return answer%9;
     }
 }
