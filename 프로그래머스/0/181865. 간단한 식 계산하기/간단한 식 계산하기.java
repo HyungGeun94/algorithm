@@ -1,18 +1,25 @@
+import java.util.*;
+
 class Solution {
     public int solution(String binomial) {
-
-        String[] strArr = binomial.split("\\s+");
-
+        int answer = 0;
         
-        int a = Integer.parseInt(strArr[0]);
-
-
-        int b = Integer.parseInt(strArr[2]);
-
-
-        String buho = strArr[1];
-
+        String[] stArr = binomial.split(" ");
+        int a =Integer.parseInt(stArr[0]);
+        String op = stArr[1];
+        int b = Integer.parseInt(stArr[2]);
         
-        return buho.equals("+") ? a+b : buho.equals("-") ? a-b : a*b;
+        if(op.equals("+")){
+            answer=a+b;
+        }else if(op.equals("-")){
+            answer=a-b;
+        }else{
+            answer=a*b;
+        }
+        
+    
+        
+        
+        return answer;
     }
 }
