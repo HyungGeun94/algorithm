@@ -5,9 +5,10 @@ public class Solution {
         int answer = 0;
         
         String str = n+"";
-        for(char c :str.toCharArray()){
-            answer+=c-'0';
+        
+        for(int i=0; i<str.length(); i++){
             
+            answer+=(str.charAt(i)-'0');
         }
 
 
