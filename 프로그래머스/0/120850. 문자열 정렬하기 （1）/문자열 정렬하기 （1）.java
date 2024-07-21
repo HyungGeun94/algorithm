@@ -3,25 +3,31 @@ import java.util.*;
 class Solution {
     public int[] solution(String my_string) {
         
+        List<Integer> list = new ArrayList<>();
         
-        char[] chArr = my_string.replaceAll("[^0-9]", "").toCharArray();
-        
-        Arrays.sort(chArr);
-        
-        int[] answer = new int[chArr.length];
-        
-        for(int i=0; i<chArr.length; i++){
-            answer[i]=chArr[i]-'0';
+        for(int i=0; i<my_string.length(); i++){
+            
+            if(my_string.charAt(i)>='0' && my_string.charAt(i)<='9'){
+                
+                list.add(my_string.charAt(i)-'0');
+                
+            }
             
         }
         
+        Collections.sort(list);
+        
+        int[] answer = new int[list.size()];
+        
+        for(int i=0; i<answer.length; i++){
             
+            answer[i]=list.get(i);
+        }
         
-        
+        return answer;
         
         
         
 
-        return answer;
     }
 }
