@@ -1,24 +1,21 @@
 class Solution {
     boolean solution(String s) {
         
-        int toggle = 0;
+        s= s.toLowerCase();
+        int pcount =0;
+        int ycount =0;
         
-        
-        for(int i=0; i<s.length(); i++){
+        for(int i=0 ; i<s.length(); i++){
             
-            if(s.charAt(i)=='p' || s.charAt(i)=='P'){
-                toggle++;
-            }else if(s.charAt(i)=='y' || s.charAt(i)=='Y'){
-                toggle--;
+            if(s.charAt(i)=='p'){
+                pcount++;
+            }else if(s.charAt(i)=='y'){
+                ycount++;
             }
             
-            
-            
         }
-        
-        
 
 
-        return toggle == 0 ? true : false;
+        return pcount==ycount ? true : false ;
     }
 }
