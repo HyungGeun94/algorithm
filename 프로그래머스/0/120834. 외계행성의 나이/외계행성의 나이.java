@@ -1,24 +1,17 @@
 class Solution {
     public String solution(int age) {
-        String strAge = ""+age;
+        String answer = "";
         
-        char[] ageArr = {'a','b','c','d','e','f','g','h','i','j'};
+        String str = age+"";
         
-        String answer ="";
+        char[] strArr = {'a','b','c','d','e','f','g','h','i','j'};
         
-        for(int i=0; i<strAge.length(); i++){
+        
+        for(int i=0; i<str.length(); i++){
             
-            answer += ageArr[strAge.charAt(i)-'0'];
-          
+            answer+=strArr[str.charAt(i)-'0'];
             
         }
-        
-        
-        
-        
-        
-        
-        
         
         return answer;
     }
