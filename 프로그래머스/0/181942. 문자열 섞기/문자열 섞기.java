@@ -4,12 +4,15 @@ class Solution {
         StringBuffer sb = new StringBuffer();
         
         
+        
         for(int i=0; i<str1.length(); i++){
             
-            sb.append(str1.charAt(i)+"");
-            sb.append(str2.charAt(i)+"");
+            sb.append(str1.charAt(i));
+            sb.append(str2.charAt(i));
             
         }
+        
+        
         
         
         return sb.toString();
