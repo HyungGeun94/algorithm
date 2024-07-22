@@ -4,9 +4,15 @@ class Solution {
         
         for(int i=0; i<included.length; i++){
             
-            answer += included[i] ? a+d*i : 0;
+            if(included[i]){
+                
+                answer+= a+(d*i);
+                
+            }
+            
             
         }
+        
         
         return answer;
     }
