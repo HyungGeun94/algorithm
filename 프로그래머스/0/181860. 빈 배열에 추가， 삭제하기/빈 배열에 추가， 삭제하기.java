@@ -6,32 +6,41 @@ class Solution {
         
         List<Integer> list = new ArrayList<>();
         
-        for(int j=0; j<flag.length; j++){
-            if(flag[j]){
-                for(int i=0; i<arr[j]*2; i++){
-                    list.add(arr[j]);
+        for(int i=0; i<flag.length; i++){
+            
+            if(flag[i]){
+                
+                for(int k=0; k<arr[i]*2; k++){
+                    
+                    list.add(arr[i]);
                 }
                 
                 
             }else{
-                for(int i=0; i<arr[j]; i++){
-                    if(list.size()!=0)
-                    list.remove(list.size()-1);
+                
+                int idx = list.size()-1;
+                
+                for(int j=0; j<arr[i]; j++){
+                    
+                    list.remove(idx--);
                     
                 }
                 
+                
             }
+            
+            
         }
+        
+        
+        
+        
         
         int[] answer = new int[list.size()];
-
-        for(int i=0; i<list.size(); i++){
+        for(int i=0; i<answer.length; i++){
+            
             answer[i]=list.get(i);
-            
-            
         }
-        
-        
         
         return answer;
     }
