@@ -1,9 +1,11 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public int[] solution(int[] arr, int divisor) {
-        int[] arr2 = Arrays.stream(arr).filter(i-> i%divisor==0).sorted().toArray();
-        return arr2.length ==0 ? new int[]{-1} : arr2;
-
+        
+        int[] divisorArr = Arrays.stream(arr).filter(i-> i%divisor==0).sorted().toArray();
+        
+      
+        return divisorArr.length!=0 ? divisorArr : new int[]{-1}; 
     }
 }
