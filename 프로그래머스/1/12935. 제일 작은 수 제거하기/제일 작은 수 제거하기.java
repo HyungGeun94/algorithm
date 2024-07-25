@@ -1,51 +1,33 @@
 import java.util.*;
 
-
 class Solution {
     public int[] solution(int[] arr) {
         
-        
-      
-        
-        
-        
-        int[] answer = {};
-        
         if(arr.length==1){
-             answer = new int[]{-1};
-        } else{
-            
-            answer= new int[arr.length-1];
-    
-        
-
-        List<Integer> originList = new ArrayList<>();
-        List<Integer> sortedList = new ArrayList<>();
-        
-        for(int i=0; i<arr.length; i++){
-            originList.add(arr[i]);
-            sortedList.add(arr[i]);
+            return new int[]{-1};
         }
         
-        Collections.sort(sortedList);
+        int min= arr[0];
+        int idx= 0;
         
-        int min = sortedList.get(0);
-        
-        originList.remove(new Integer(min));
-        
-        for(int i=0; i<originList.size(); i++){
-            answer[i]=originList.get(i);
+        for(int i=1; i<arr.length; i++){
+            
+            if(arr[i]<min){
+                min=arr[i];
+                idx=i;
+            }
         }
             
+        int[] answer = new int[arr.length-1];
+        
+        for(int i=0; i<answer.length; i++){
+            
+            if(i<idx)
+            answer[i]=arr[i];
+            else
+            answer[i]=arr[i+1];
             
         }
-        
-        
-        
-        
-        
-        
-        
         
         
         
