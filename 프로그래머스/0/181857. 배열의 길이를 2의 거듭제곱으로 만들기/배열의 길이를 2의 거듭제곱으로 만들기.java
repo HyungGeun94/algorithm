@@ -2,34 +2,35 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int[] arr) {
-        List<Integer> list = new ArrayList<>();
-        for(int i = 0; i < arr.length; i++) {
-            list.add(arr[i]);
+        
+        int[] pow = {2,4,8,16,32,64,128,256,512,1024};
+        
+        if(arr.length==1 || arr.length==2){
+            return arr;
         }
-
-        int pow = 0;
-        int size = list.size();
-        for(int i = 0; i < 11; i++) {
-            if(size <= Math.pow(2, i)) {
-                pow = i;
+        
+        int size = 0;
+        
+        for(int i=pow.length-1 ; i>=0; i--){
+            
+            if(arr.length>pow[i]){
+                
+                size= pow[i+1];
+                
                 break;
             }
+            
         }
-
-        int a = (int) Math.pow(2, pow);
-        if(size == a) {
-            return arr;
-        } else {
-            for(int i = 0; i < a - size; i++) {
-                list.add(0);
-            }
+        
+        
+        int[] answer = new int[size];
+        
+        for(int i=0; i<arr.length; i++){
+            answer[i]=arr[i];
         }
-
-        int[] answer = new int[list.size()];
-        for(int i = 0; i < list.size(); i++) {
-            answer[i] = list.get(i);
-        }
-
+        
+        
+        
         return answer;
     }
 }
