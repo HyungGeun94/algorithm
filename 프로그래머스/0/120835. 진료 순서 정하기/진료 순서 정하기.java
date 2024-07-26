@@ -1,30 +1,31 @@
-import java.util.*;
-
-
 class Solution {
     public int[] solution(int[] emergency) {
         
-        List<Integer> originlist = new ArrayList<>();
-        List<Integer> sortedlist = new ArrayList<>();
-
-
         int[] answer = new int[emergency.length];
-
-
-        for (int i : emergency) {
-            originlist.add(i);
-            sortedlist.add(i);
-        }
-
-        Collections.sort(sortedlist);
-
-
-        int idx=1;
-        for(int i= sortedlist.size()-1;  i>=0; i--){
-            answer[originlist.indexOf(sortedlist.get(i))]=idx++;
-        }
         
         
+        
+        for(int i=0; i<emergency.length; i++){
+            
+            int max=emergency[i];
+            int num=1;
+
+
+            
+            for(int j=0; j<emergency.length; j++){
+                
+                if(emergency[i]<emergency[j]){
+                    
+                    num++;
+                    
+                }
+                
+                
+            }
+            answer[i]=num;
+            
+            
+        }
         
         
         
