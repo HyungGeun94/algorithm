@@ -1,29 +1,28 @@
 class Solution {
     public String solution(String letter) {
-        String answer = "";
         
-        String[] split = letter.split(" ");
+        StringBuffer sb = new StringBuffer();
+        
 
-        String[] moss = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+        String[] morse = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
         
-        String[] mossAlpa = {"a","b","c","d","e","f","g","h","i","j","k","l","m","n","o","p","q","r","s","t","u","v","w","x","y","z",};
+        String str[] = letter.split(" ");
         
-        for(String part : split){
-            for(int i=0; i<moss.length; i++){
-                if(part.equals(moss[i])){
-                    answer+=mossAlpa[i];
-                    
+        for(int i=0; i<str.length; i++){
+            
+            for(int j=0; j<morse.length; j++){
+            
+                if(str[i].equals(morse[j])){
+                
+                    sb.append((char)('a'+j));
+                
                 }
-                
-                
-            }
+               
+               }
+            
+            
         }
         
-        
-        
-            
-               
-        
-        return answer;
+        return sb.toString();
     }
 }
