@@ -1,22 +1,32 @@
 class Solution {
     public int solution(int n) {
-        int answer = 0;
-        int factorial = 1;
+        
+        
+        int answer = 1;
+        
+        int num=1;
         
         while(true){
             
-            answer++;
+            if(answer*num<=n){
+                
+                
             
-            factorial*=answer;
-            
-            if(factorial>n){
+                answer*=num;
+                
+                num++;
+                
+                
+            }else{
+                answer=num-1;
                 break;
+                
             }
-            
+         
         }
         
         
         
-        return --answer;
+        return answer;
     }
 }
