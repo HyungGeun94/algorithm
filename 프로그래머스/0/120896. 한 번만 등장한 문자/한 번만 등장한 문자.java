@@ -1,35 +1,32 @@
 import java.util.*;
 
-
 class Solution {
     public String solution(String s) {
-
-        String answer = "";
         
+     String answer = "";
+
+
         Map<Character, Integer> map = new HashMap<>();
-        
+
         for(int i=0; i<s.length(); i++){
-            
-            if(!map.containsKey(s.charAt(i))){
-                map.put(s.charAt(i),1);
-            }
-            else{
-                map.put(s.charAt(i),map.get(s.charAt(i))+1);
-            }
+
+            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
+
         }
 
+        List<Character> list = new ArrayList<>(map.keySet());
+        Collections.sort(list);
 
-        Set<Map.Entry<Character, Integer>> entries = map.entrySet();
-        for (Map.Entry<Character, Integer> entry : entries) {
-            if(entry.getValue()==1){
-                answer += entry.getKey();
+        for (int i=0; i<list.size(); i++) {
+
+            if(map.get(list.get(i))==1){
+                answer+=list.get(i);
+
             }
+
         }
         
-        char[] chArr = answer.toCharArray();
-        Arrays.sort(chArr);
-        
-        return new String(chArr);
-
+        return answer;
+      
     }
 }
