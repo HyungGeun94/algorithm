@@ -1,25 +1,21 @@
-import java.util.*;
-
-
 class Solution {
     public int solution(int[] array) {
-        int answer=0;
+        int answer = 0;
         
-        String str = Arrays.toString(array);
         
-        for(int i=0; i<str.length();i++){
+        for(int i : array){
             
-            if(str.charAt(i)=='7'){
-             
+            String str = i+"";
+            
+            for(int j=0; j<str.length(); j++){
                 
-                
-                answer++;
+                if(str.charAt(j)=='7'){
+                    answer++;
+                }
             }
             
         }
         
-
-    
         return answer;
     }
 }
