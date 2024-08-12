@@ -6,16 +6,24 @@ public class Solution {
         String a = sc.next();
         
         StringBuffer sb = new StringBuffer();
-
         for(int i=0; i<a.length(); i++){
-
-            if(a.charAt(i)>='a' && a.charAt(i)<='z'){
-                sb.append((a.charAt(i)+"").toUpperCase());
+            
+            char ch = a.charAt(i);
+            
+            if(ch>='a' && ch<='z'){
+                
+                sb.append(Character.toUpperCase(ch));
+            
             }else{
-                sb.append((a.charAt(i)+"").toLowerCase());
+                
+                sb.append(Character.toLowerCase(ch));
+                
             }
+            
+            
         }
-
+        
         System.out.println(sb.toString());
+        
     }
 }
