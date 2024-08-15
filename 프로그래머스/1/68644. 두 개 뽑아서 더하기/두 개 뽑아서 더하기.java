@@ -5,11 +5,14 @@ class Solution {
         
         Set<Integer> set = new HashSet<>();
         
+        
+        
         for(int i=0; i<numbers.length-1; i++){
+            
             for(int j=i+1; j<numbers.length; j++){
                 
-                int num = numbers[i]+numbers[j];
-                set.add(num);
+                set.add(numbers[i]+numbers[j]);
+                
                 
             }
             
@@ -20,16 +23,14 @@ class Solution {
         Collections.sort(list);
         
         
+        int[] answer = new int[set.size()];
         
-        
-        
-        int[] answer = new int[list.size()];
-        
-        for(int i=0; i<list.size(); i++){
-            answer[i]= list.get(i);
+        for(int i=0; i<answer.length; i++){
             
+            answer[i]=list.get(i);
             
         }
+        
         
         
         return answer;
