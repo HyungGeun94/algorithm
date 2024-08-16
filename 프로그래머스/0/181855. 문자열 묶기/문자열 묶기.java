@@ -1,27 +1,20 @@
 import java.util.*;
 
-
 class Solution {
     public int solution(String[] strArr) {
+        int answer = 0;
         
-        Map<Integer,Integer> map = new HashMap<>();
-
-
-        for (String s : strArr) {
+        int [] arr = new int[31];
+        
+        for(String s : strArr){
             
-            if (map.containsKey(s.length())) {
-                
-                map.put(s.length(), map.get(s.length()) + 1);
-            } 
-            else {
-                
-                map.put(s.length(), 1);
-            }
+            arr[s.length()]+=1;
+            
+            
         }
-
-        Object[] array = map.values().toArray();
-        Arrays.sort(array);
-
-       return (int)array[array.length-1];
+        
+        Arrays.sort(arr);
+        
+        return arr[arr.length-1];
     }
 }
