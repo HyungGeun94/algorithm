@@ -1,14 +1,22 @@
 class Solution {
     public int solution(String s) {
-        String[] split = s.split(" ");
+        int answer = 0;
         
-        int sum=0;
+        String strArr[] = s.split(" ");
         
-        for(int i=0; i< split.length; i++){
+        for(int i=0; i<strArr.length; i++){
             
-            sum += split[i].equals("Z") ? -Integer.parseInt((split[i-1])) : Integer.parseInt(split[i]); 
+            if(strArr[i].equals("Z")){
+                
+                answer-=Integer.parseInt(strArr[i-1]);
+                    
+            }else{
+                
+                answer+=Integer.parseInt(strArr[i]);
+            }
             
-        }        
-        return sum;
+        }
+        
+        return answer;
     }
 }
