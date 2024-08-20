@@ -1,36 +1,32 @@
+import java.util.*;
+
 class Solution {
     public int[] solution(int[] arr) {
-        int firstIndex = -1;
-        int lastIndex = -1;
         
-        
+        int from = 0;
+        int to = 0;
         
         for(int i=0; i<arr.length; i++){
             
-            if(arr[i]==2 && firstIndex==-1){
-                firstIndex=i;
+            if(arr[i]==2){
+                from=i;
+                break;
             }
-            else if(arr[i]==2){
-                lastIndex=i;
-            }
-            
         }
         
-        if(firstIndex==-1){
+        for(int i=arr.length-1 ; i>0 ; i--){
+            
+            if(arr[i]==2){
+                to=i;
+                break;
+            }
+        }
+        
+        if(from==to && from==0){
             return new int[]{-1};
         }
-        if(lastIndex==-1){
-            return new int[]{2};
-        }
         
-        int[] answer = new int[lastIndex-firstIndex+1];
-        
-        for(int i=firstIndex; i<=lastIndex; i++){
-            answer[i-firstIndex]= arr[i];
-        }
-        
-        
-        
+        int[] answer =Arrays.copyOfRange(arr,from,to+1);
         return answer;
     }
 }
