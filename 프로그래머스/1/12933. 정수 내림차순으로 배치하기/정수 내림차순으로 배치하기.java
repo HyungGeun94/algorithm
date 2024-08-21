@@ -1,18 +1,24 @@
-import java.util.Arrays;
-
+import java.util.*;
 
 class Solution {
     public long solution(long n) {
-        
-        String[] strArr = (n+"").split("");
-        
-        Arrays.sort(strArr);
-        
-        StringBuffer sb = new StringBuffer(String.join("",strArr));
 
+        String str = n+"";
+
+        Character[] charArray = new Character[str.length()];
+
+        for(int i = 0; i < str.length(); i++) {
+            charArray[i] = str.charAt(i);
+        }
+
+        Arrays.sort(charArray,Collections.reverseOrder());
+
+        StringBuffer sb = new StringBuffer();
         
+        for(char c : charArray) {
+            sb.append(c);
+        }
         
-        
-        return Long.parseLong(sb.reverse().toString());
+        return Long.parseLong(sb.toString());
     }
 }
