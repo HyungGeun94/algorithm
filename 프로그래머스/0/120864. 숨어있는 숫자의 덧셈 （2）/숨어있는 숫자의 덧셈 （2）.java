@@ -1,35 +1,25 @@
 class Solution {
     public int solution(String my_string) {
-        int answer = 0;
-        String storage = "";
         
-        for(int i=0; i<my_string.length() ; i++){
-            System.out.println(storage);
-            
-            if(storage.length()==4){
-                 answer += Integer.parseInt(storage);
-                storage="";
-            }
+        String number ="0";
+        
+        int answer = 0;
+        
+        for(int i=0; i<my_string.length(); i++){
             
             if(my_string.charAt(i)>='0' && my_string.charAt(i)<='9'){
-                
-                storage= storage +( (my_string.charAt(i)-'0'));
-                
-                if (i == my_string.length() - 1) {
-                    answer += Integer.parseInt(storage);
+                number+=my_string.charAt(i);
                 }
-            }
-            
-            else if(storage.length()!=0){
-                answer += Integer.parseInt(storage);
-                storage="";
-            }
-            
-     
+            else{
+                answer+=Integer.parseInt(number);
+                number="0";
+                }
             
         }
         
-        
+        if(!number.equals("0")){
+                answer+=Integer.parseInt(number);
+        }
         
         return answer;
     }
