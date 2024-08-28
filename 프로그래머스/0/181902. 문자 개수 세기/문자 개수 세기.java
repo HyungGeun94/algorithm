@@ -4,14 +4,13 @@ class Solution {
         
         for(int i=0; i<my_string.length(); i++){
             
-            if(my_string.charAt(i)>='A' && my_string.charAt(i)<='Z'){
-                answer[my_string.charAt(i)-'A']+=1;
-                
-            }else{
-                answer[my_string.charAt(i)-'a'+26]+=1;
-                
+            if(my_string.charAt(i)>='a'&& my_string.charAt(i)<='z'){
+            answer[my_string.charAt(i)-'a'+26]+=1;
             }
-            
+            else{
+            answer[my_string.charAt(i)-'A']+=1;
+
+            }
             
         }
         
