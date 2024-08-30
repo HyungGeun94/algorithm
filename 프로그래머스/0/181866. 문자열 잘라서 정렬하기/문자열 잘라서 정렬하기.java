@@ -1,17 +1,13 @@
 import java.util.*;
-
 class Solution {
-    public String[] solution(String myString) {
+    public List<String> solution(String myString) {
         List<String> list = new ArrayList<>();
-        String[] parts = myString.split("x+");
-        for (String part : parts) {
-            if (!part.isEmpty()) {
-                list.add(part);
-            }
+        String ans[] = myString.split("x");
+        Arrays.sort(ans);
+        for(int i=0; i<ans.length; i++){
+            if(!ans[i].equals(""))
+                list.add(ans[i]);
         }
-        
-        Collections.sort(list);
-        
-        return list.toArray(new String[0]);
+        return list;
     }
 }
