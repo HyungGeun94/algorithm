@@ -1,17 +1,15 @@
-import java.util.*;
+import java.util.Scanner;
 
-
-public class Main{
-
-    public static void main(String[] args){
+public class Main {
+    public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-
-        while(scanner.hasNext()){
-
-            System.out.println(scanner.nextLine());
+        
+     
+        while (scanner.hasNextLine()) {
+            String line = scanner.nextLine();  
+            System.out.println(line);         
         }
-
-
-
+        
+       
     }
 }
