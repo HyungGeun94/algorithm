@@ -1,31 +1,31 @@
 import java.util.*;
 
-public class Solution {
-    public static int[] solution(int[] arr, int k) {
+class Solution {
+    public int[] solution(int[] arr, int k) {
         
-        List<Integer> uniqueNumbers = new ArrayList<>();
-        Set<Integer> seen = new HashSet<>();
-
-        for (int num : arr) {
-            if (!seen.contains(num)) {
-                seen.add(num);
-                uniqueNumbers.add(num);
-            }
-            if (uniqueNumbers.size() == k) {
+        int[] answer = new int[k];
+        
+        Arrays.fill(answer,-1);
+        
+        Set<Integer> set = new HashSet<>();
+        
+        int index=0;
+        
+        for(int i=0; i<arr.length; i++){
+            
+            if(set.size()==k){
                 break;
             }
+            
+            if(!set.contains(arr[i])){
+                set.add(arr[i]);
+                answer[index++]=arr[i];
+                
+            }
+            
+            
         }
-
-        int[] result = new int[k];
-        int i = 0;
-        for (; i < uniqueNumbers.size(); i++) {
-            result[i] = uniqueNumbers.get(i);
-        }
-
-        for (; i < k; i++) {
-            result[i] = -1;
-        }
-
-        return result;
+        
+        return answer;
     }
 }
