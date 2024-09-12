@@ -1,36 +1,31 @@
 class Solution {
     public String solution(String s) {
+        String str = s.toLowerCase();
         
-        StringBuffer sb = new StringBuffer(s.toLowerCase());       
-        boolean start = true;       
-        if (s == null || s.isEmpty()) {
-            return s;
-        } 
+        String answer ="";
         
-        for(int i=0; i<sb.length() ;i++){
+        boolean check = true;
+        
+        for(int i=0; i<str.length(); i++){
             
-            // 공백이면 pass 
-            if(sb.charAt(i) == ' '){
-                start = true;
-                continue;
+            
+            if(str.charAt(i)>='a' && str.charAt(i)<='z' && check){
+                
+                answer+= (str.charAt(i)+"").toUpperCase();
+                check=false;
+            }
+            else if(str.charAt(i)==' '){
+                answer+= str.charAt(i);
+                check=true;
+            }else{
+                answer+=str.charAt(i);
+                check=false;
             }
             
-            // 숫자면 true
-            if(0 <= sb.charAt(i) - '0' && sb.charAt(i)-'0'<= 9){
-                  start = false;
-            }
-            else if(start == true && (sb.charAt(i)>='a' && sb.charAt(i)<='z')){
-                
-                sb.setCharAt(i,(sb.charAt(i)+"").toUpperCase().charAt(0));
-                
-                start=false;              
-            }
-            else if(sb.charAt(i)==' '){
-                start=true;
-            }    
-          
         }
         
-        return sb.toString();
+        
+        
+        return answer;
     }
 }
