@@ -1,29 +1,34 @@
 class Solution {
     public int[] solution(String[] keyinput, int[] board) {
-        int[] answer = new int[2];
+        int[] answer = {0, 0};
         
+        int xLimit = board[0] / 2;
+        int yLimit = board[1] / 2;
         
-        
-        for(String str : keyinput){
-            
-            if(str.equals("left")){
-                answer[0]= Math.abs(answer[0]-1) <= Math.abs((board[0]-1)/2) ? answer[0]-1 :answer[0] ;
-
-                
-            }else if(str.equals("right")){
-                answer[0]= Math.abs(answer[0]+1) <= Math.abs((board[0]-1)/2) ? answer[0]+1 : answer[0];
-
-                
-            }else if(str.equals("up")){
-                answer[1]= Math.abs(answer[1]+1) <= Math.abs((board[1]-1)/2) ? answer[1]+1 : answer[1];
-            }else {
-                answer[1]= Math.abs(answer[1]-1) <= Math.abs((board[1]-1)/2) ? answer[1]-1 : answer[1];
-
+        for (String str : keyinput) {
+            switch (str) {
+                case "left":
+                    if (answer[0] > -xLimit) {
+                        answer[0] -= 1;
+                    }
+                    break;
+                case "right":
+                    if (answer[0] < xLimit) { 
+                        answer[0] += 1;
+                    }
+                    break;
+                case "up":
+                    if (answer[1] < yLimit) {
+                        answer[1] += 1;
+                    }
+                    break;
+                case "down":
+                    if (answer[1] > -yLimit) { 
+                        answer[1] -= 1;
+                    }
+                    break;
             }
-            
-            
         }
-        
         
         return answer;
     }
