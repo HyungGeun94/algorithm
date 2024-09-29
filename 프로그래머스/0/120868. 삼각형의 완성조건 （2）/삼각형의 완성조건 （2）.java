@@ -7,20 +7,19 @@ class Solution {
         
         Arrays.sort(sides);
         
-        // sides[1]이 가장 큰 경우
-        for(int i=sides[1]-sides[0]+1; i<=sides[1]; i++){
-                answer++;
+        for(int i=1;  i<=sides[1]; i++){
+            if(i+sides[0]>sides[1]){
+            answer++;
+            System.out.println(i);
+
             }
-        
-//             나머지 한 변이 가장 큰 경우 
+        }
         
         for(int i=sides[1]+1; i<sides[0]+sides[1]; i++){
             answer++;
+                        System.out.println(i);
+
         }
-        
-        
-            
-        
         
         
         return answer;
