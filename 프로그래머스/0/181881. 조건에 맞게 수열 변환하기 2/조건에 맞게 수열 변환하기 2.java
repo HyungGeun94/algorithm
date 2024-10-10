@@ -1,39 +1,30 @@
-import java.util.*;
+import java.util.Arrays;
 
 class Solution {
     public int solution(int[] arr) {
-        
-        int answer = 0;
-        int[] arr2 = new int[arr.length];
+        int count = 0;
+        boolean isChanged = true;
 
-        
-        while(true){
+        while (isChanged) {
+            isChanged = false;
+            int[] prevArr = Arrays.copyOf(arr, arr.length);
 
-        for(int i=0; i<arr.length; i++){
-            
-            if(arr[i]>=50 && arr[i]%2==0 ){
-                arr2[i]=arr[i]/2;
-            }else if(arr[i]<50 && arr[i]%2!=0){
-                arr2[i]=arr[i]*2+1;
-            }else{
-                arr2[i]=arr[i];
+            for (int i = 0; i < arr.length; i++) {
+                if (arr[i] >= 50 && arr[i] % 2 == 0) {
+                    arr[i] /= 2; 
+                } else if (arr[i] < 50 && arr[i] % 2 != 0) {
+                    arr[i] = arr[i] * 2 + 1; 
+                }
             }
-            
-            
-          }
-            if(Arrays.equals(arr,arr2)){
-                break;
-            }else{
-                arr=Arrays.copyOf(arr2,arr2.length);
-                answer++;
 
+
+            if (!Arrays.equals(arr, prevArr)) {
+                isChanged = true; 
             }
-            
-            
+
+            count++; 
         }
-        
-        
-        
-        return answer;
+
+        return count - 1; // 반복이 멈추는 순간은 한 번 더 카운트되므로 1을 뺌
     }
 }
