@@ -4,21 +4,18 @@ class Solution {
     public int solution(int[] nums) {
         int answer = 0;
         
-        List<Integer> list = new ArrayList<>();
+        Set<Integer> set = new HashSet<>();
         
         for(int i=0; i<nums.length; i++){
             
-            if(list.size()==(nums.length/2)){
-                break;
-            }
             
-            if(!list.contains(nums[i])){
-                list.add(nums[i]);
-                answer++;
-            }
-            
-            
-            
+            set.add(nums[i]);
+        }
+        
+        if(nums.length/2 < set.size()){
+            answer=nums.length/2;
+        }else{
+            answer=set.size();
         }
         
         
