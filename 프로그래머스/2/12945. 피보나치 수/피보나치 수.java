@@ -1,17 +1,19 @@
 class Solution {
     public int solution(int n) {
+        int answer = 0;
         
-        long num0=0;
-        long num1=1;
-        long num2=num0+num1;        
+        long zero=0;
+        long first=1;
+        long second=0;
         
-        for(int i=2; i<=n; i++){
+        for(int i=2; i<n; i++){
             
-            num2=(num0 + num1) % 1234567;  
-            num0=num1;
-            num1=num2;
+            second=(zero+first)%1234567;
+            
+            zero=first;
+            first=second;
         }
         
-        return (int)(num2%1234567);
+        return (int)(zero+first)%1234567;
     }
 }
