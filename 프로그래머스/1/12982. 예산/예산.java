@@ -2,25 +2,25 @@ import java.util.*;
 
 class Solution {
     public int solution(int[] d, int budget) {
+        
+        Arrays.sort(d);
+        
+        
         int answer = 0;
         
         int sum=0;
         
-        Arrays.sort(d);
-        
-        for(int i : d){
+        for(int i=0; i<d.length; i++){
             
-            if(sum+i>budget){
-                
+            sum+=d[i];
+            
+            if(sum<=budget){
+                answer++;
+            }else{
                 break;
             }
             
-            sum+=i;
-            answer++;
-            
         }
-        
-        
         
         return answer;
     }
