@@ -4,21 +4,17 @@ class Solution {
     public int solution(int[] nums) {
         int answer = 0;
         
+        int max = nums.length/2;
+        
         Set<Integer> set = new HashSet<>();
         
-        for(int i=0; i<nums.length; i++){
+        for(int i : nums){
             
-            
-            set.add(nums[i]);
-        }
-        
-        if(nums.length/2 < set.size()){
-            answer=nums.length/2;
-        }else{
-            answer=set.size();
+            set.add(i);
         }
         
         
-        return answer;
+        
+        return set.size()>=max ? max : set.size();
     }
 }
