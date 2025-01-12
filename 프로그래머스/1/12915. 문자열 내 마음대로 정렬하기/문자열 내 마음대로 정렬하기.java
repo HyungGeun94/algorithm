@@ -1,18 +1,14 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public String[] solution(String[] strings, int n) {
-        String[] extracted = new String[strings.length];
-        for (int i = 0; i < strings.length; i++) {
-            extracted[i] = strings[i].charAt(n) + strings[i];
-        }
-        
-        Arrays.sort(extracted);
-        
-        for (int i = 0; i < extracted.length; i++) {
-            extracted[i] = extracted[i].substring(1);
-        }
-        
-        return extracted;
+        Arrays.sort(strings, (a, b) -> {
+            if (a.charAt(n) == b.charAt(n)) {
+                return a.compareTo(b);
+            } else {
+                return Character.compare(a.charAt(n), b.charAt(n));
+            }
+        });
+        return strings;
     }
 }
