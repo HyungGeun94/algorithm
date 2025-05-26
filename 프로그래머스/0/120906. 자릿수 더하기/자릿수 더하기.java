@@ -1,16 +1,10 @@
 class Solution {
     public int solution(int n) {
-        int answer = 0;
-        
-        String str = n+"";
-        
-        for(int i=0; i<str.length(); i++){
-            
-            answer+=str.charAt(i)-'0';
-            
+        String s = n+"";
+        int sum = 0;
+        for (char c : s.toCharArray()) {
+            sum += c - '0';
         }
-        
-        
-        return answer;
+        return sum;
     }
 }
