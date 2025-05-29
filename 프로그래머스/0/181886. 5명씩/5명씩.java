@@ -1,20 +1,11 @@
 class Solution {
     public String[] solution(String[] names) {
+        String[] answer = new String[names.length/5 + (names.length%5==0 ? 0 : 1)];
         
-        int size = names.length % 5 ==0 ? names.length/5 : (names.length/5)+1;
-        
-        
-        String[] answer = new String[size];
-        
-        int idx=0;
-        
-        for(int i=0; i<names.length; i+=5){
+        for(int i=0; i< answer.length; i++){
+            answer[i]=names[i*5];
             
-            answer[idx]=names[i];
-            idx++;
         }
-        
-        
         
         return answer;
     }
