@@ -1,24 +1,21 @@
 class Solution {
     public int[] solution(int[] arr) {
+        int[] answer = new int[arr.length];
         
-        
-        for(int i=0; i<arr.length; i++){
+        for(int i = 0 ; i<arr.length; i++){
             
-            if(arr[i]>=50 && arr[i]%2==0){
-                
-                arr[i]=arr[i]/2;
-                
-            }else if(arr[i]<50 && arr[i]%2!=0){
-                
-                arr[i]=arr[i]*2;
-                
+            int num = arr[i];
+            if(num>=50 && num%2==0){
+                answer[i]=num/2;
+            }else if(num <50 && num%2!=0){
+                answer[i]=num*2;
+            }else{
+                answer[i]=num;
             }
             
             
         }
         
-        
-        
-        return arr;
+        return answer;
     }
 }
