@@ -1,24 +1,26 @@
 class Solution {
     public String solution(String rsp) {
         
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         
-        char[] chArr = rsp.toCharArray();
-        
-        for(int i=0; i<chArr.length; i++){
+        for(int i=0; i<rsp.length(); i++){
             
-            if(chArr[i]=='2'){
+            int number = rsp.charAt(i)-'0';
+            
+            if(number==2){
                 sb.append(0);
-            }else if(chArr[i]=='0'){
+                
+            }else if(number==0){
                 sb.append(5);
-            }else{
+                
+            }else if(number==5){
                 sb.append(2);
+                
             }
-            
         }
-        
-        
-        
-        return sb.toString();
+            
+            
+            return sb.toString();
+            
     }
 }
