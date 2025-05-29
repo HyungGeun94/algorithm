@@ -2,13 +2,15 @@ import java.util.*;
 
 class Solution {
     public String solution(String my_string) {
+        String answer = "";
         
-        char[] chArr = my_string.toLowerCase().toCharArray();
+        my_string = my_string.toLowerCase();
         
-        Arrays.sort(chArr);
+        char[] charArr = my_string.toCharArray();
+        
+        Arrays.sort(charArr);
         
         
-        
-        return new String(chArr);
+        return new String(charArr);
     }
 }
