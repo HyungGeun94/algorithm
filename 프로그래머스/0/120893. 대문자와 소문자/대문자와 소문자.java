@@ -1,20 +1,20 @@
 class Solution {
     public String solution(String my_string) {
-        String answer = "";
         
-        for(int i=0; i<my_string.length(); i++){
-            char ch = my_string.charAt(i);
+        StringBuilder sb = new StringBuilder();
+        
+        for(char ch : my_string.toCharArray()){
             
             if(ch>='a' && ch<='z'){
                 
-                answer +=(ch+"").toUpperCase();
-            }else if(ch>='A' && ch<='Z'){
+                sb.append(Character.toUpperCase(ch));
                 
-                answer +=(ch+"").toLowerCase();
+            }else{
+                
+                sb.append(Character.toLowerCase(ch));
             }
             
         }
-        
-        return answer;
+        return sb.toString();
     }
 }
