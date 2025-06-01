@@ -2,20 +2,20 @@ import java.util.*;
 
 class Solution {
     public String[] solution(String my_string) {
-        String[] answer = new String[my_string.length()];
         
-        StringBuffer sb = new StringBuffer();
         
-        for(int i=my_string.length()-1; i>=0; i--){
+        List<String> list = new ArrayList<>();
+        
+        for(int i=my_string.length()-1; i>=0 ; i--){
             
-            sb.insert(0,my_string.charAt(i));
-            answer[my_string.length()-1-i]= sb.toString();
+            list.add(my_string.substring(i));
             
         }
         
+        String[] strArr = list.toArray(new String[0]);
         
-        Arrays.sort(answer);
+        Arrays.sort(strArr);
         
-        return answer;
+        return strArr;
     }
 }
