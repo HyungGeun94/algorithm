@@ -1,17 +1,11 @@
-import java.util.*;
+import java.util.Arrays;
+import java.util.stream.IntStream;
 
 public class Solution {
     public int solution(int n) {
-        int answer = 0;
         
-        String str = n+"";
-        
-        for(int i=0; i<str.length(); i++){
-            
-            answer+=(str.charAt(i)-'0');
-        }
+        return String.valueOf(n).chars().map(i-> i-'0').sum();
 
 
-        return answer;
     }
 }
