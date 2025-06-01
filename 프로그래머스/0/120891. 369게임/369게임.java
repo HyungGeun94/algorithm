@@ -1,21 +1,13 @@
+import java.util.stream.IntStream;
+
 class Solution {
     public int solution(int order) {
         
-        int answer = 0;
-        
-        String str = order+"";
-        
-        for(int i=0; i<str.length(); i++){
-            
-            if(str.charAt(i)=='3' ||str.charAt(i)=='6'||str.charAt(i)=='9'){
-                
-                answer++;
-            }
-            
-            
-        }
+        String str = String.valueOf(order);
         
         
-        return answer;
+        
+        
+        return (int)IntStream.range(0,str.length()).filter(i->str.charAt(i) == '3' || str.charAt(i) =='6' || str.charAt(i) == '9').count();
     }
 }
