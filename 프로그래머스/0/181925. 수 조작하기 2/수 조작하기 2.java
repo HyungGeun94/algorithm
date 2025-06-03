@@ -1,25 +1,24 @@
 class Solution {
     public String solution(int[] numLog) {
+
         
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         
-        for(int i=1; i<numLog.length; i++){
-            int number = numLog[i]-numLog[i-1];
+        for(int i=0; i<numLog.length-1; i++){
             
-            if(number==1){
-                sb.append('w');
-            }else if(number==-1){
-                sb.append('s');
-            }else if(number==10){
-                sb.append('d');
+            int num = numLog[i+1]-numLog[i];
+            
+            if(num==1){
+                sb.append("w");
+            }else if(num==-1){
+                sb.append("s");
+            }else if(num==10){
+                sb.append("d");
             }else{
-                sb.append('a');
+                sb.append("a");
             }
-            
-            
         }
         
-
         return sb.toString();
     }
 }
