@@ -1,17 +1,10 @@
+import java.util.stream.IntStream;
+
+
 class Solution {
     public String solution(int q, int r, String code) {
         
-        StringBuffer sb = new StringBuffer();
-        
-        for(int i=0; i<code.length(); i++){
-            
-            if(i%q==r){
-                sb.append(code.charAt(i));
-            }
-            
-            
-        }
-        
-        return sb.toString();
+        return IntStream.range(0,code.length()).boxed().filter(num -> num%q==r)
+            .map(num -> String.valueOf(code.charAt(num))).reduce("",(a,b)->a+b);
     }
 }
