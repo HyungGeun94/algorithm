@@ -7,8 +7,7 @@ public class Solution {
         
         if(n%2==0){
             System.out.println(n + " is even");
-        }
-        else if(n%2!=0){
+        }else{
             System.out.println(n + " is odd");
         }
         
