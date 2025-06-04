@@ -1,14 +1,16 @@
 class Solution {
     public int solution(int a, int b) {
-        int answer = 2*(a+b);
-        
-        if(a%2!=0 && b%2!=0){
-            answer=a*a+b*b;
-        }else if(a%2==0 && b%2==0){
-            answer = Math.abs(a-b);
+        boolean aIsOdd = a % 2 == 1;
+        boolean bIsOdd = b % 2 == 1;
+
+        if (aIsOdd && bIsOdd) {
+            return a * a + b * b;  
         }
-        
-        
-        return answer;
+
+        if (aIsOdd || bIsOdd) {
+            return 2 * (a + b);    
+        }
+
+        return Math.abs(a - b);  
     }
 }
