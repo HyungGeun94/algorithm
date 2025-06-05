@@ -3,9 +3,8 @@ import java.util.*;
 class Solution {
     public int[] solution(int[] arr, int divisor) {
         
-        int[] divisorArr = Arrays.stream(arr).filter(i-> i%divisor==0).sorted().toArray();
+        int[] intArr = Arrays.stream(arr).filter(num -> num%divisor==0).sorted().toArray();
         
-      
-        return divisorArr.length!=0 ? divisorArr : new int[]{-1}; 
+        return intArr.length==0 ? new int[]{-1} : intArr;
     }
 }
