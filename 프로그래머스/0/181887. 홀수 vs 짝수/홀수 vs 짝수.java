@@ -1,24 +1,19 @@
+import java.util.stream.IntStream;
+
 class Solution {
     public int solution(int[] num_list) {
         
-        int sumOdd=0;
-        int sumEven =0;
         
-        
-        for(int i=0; i<num_list.length; i++){
-            
-            if(i%2==0){
-                
-                sumEven+=num_list[i];
-                
-            }else{
-                
-                sumOdd+=num_list[i];
-            }
-            
-        }
-        
-        
-        return Math.max(sumEven,sumOdd);
+     int oddSum = IntStream.range(0, num_list.length)
+                          .filter(i -> i % 2 == 0)     
+                          .map(i -> num_list[i])
+                          .sum();
+
+     int evenSum = IntStream.range(0, num_list.length)
+                           .filter(i -> i % 2 == 1)    
+                           .map(i -> num_list[i])
+                           .sum();
+
+        return Math.max(oddSum, evenSum);
     }
 }
