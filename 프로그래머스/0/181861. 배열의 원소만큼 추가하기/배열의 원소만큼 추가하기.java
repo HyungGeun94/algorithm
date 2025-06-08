@@ -5,25 +5,16 @@ class Solution {
         
         List<Integer> list = new ArrayList<>();
         
-        for(int k : arr){
+        for(int i=0; i<arr.length; i++){
             
-            for(int i=1; i<=k;i++ ){
-                
-                list.add(k);   
-            }    
+            int num = arr[i];
+            
+            for (int j = 0; j < num; j++) {
+                list.add(num);
+            }
+            
         }
         
-        int[] answer = new int[list.size()];
-        
-        for(int i=0 ;  i<answer.length; i++){
-            
-            
-            answer[i]=list.get(i);
-        }
-        
-        
-        
-        
-        return answer;
+        return list.stream().mapToInt(num -> num).toArray();
     }
 }
