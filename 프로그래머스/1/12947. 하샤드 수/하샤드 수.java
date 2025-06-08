@@ -1,22 +1,10 @@
+import java.util.stream.IntStream;
+
 class Solution {
     public boolean solution(int x) {
-        boolean answer = false;
         
-        String str = ""+x;
+        int sum = String.valueOf(x).chars().map(ch -> ch-'0').sum();
         
-        int sum=0;
-        
-        for(int i=0; i<str.length(); i++){
-            
-            sum+=(str.charAt(i)-'0');
-            
-        }
-        
-        if(x%sum==0){
-            answer=true;
-        }
-        
-        
-        return answer;
+        return x%sum==0 ? true : false;
     }
 }
