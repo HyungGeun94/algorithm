@@ -1,16 +1,8 @@
+import java.util.stream.IntStream;
+
 class Solution {
     public int solution(int n) {
-        int answer = 0;
         
-        for(int i=2; i<=n; i++){
-            
-            if(n%i==1){
-                answer=i;
-                break;
-            }
-            
-        }
-        
-        return answer;
+        return IntStream.rangeClosed(1,n).filter(num -> n%num==1).findFirst().orElse(1);
     }
 }
