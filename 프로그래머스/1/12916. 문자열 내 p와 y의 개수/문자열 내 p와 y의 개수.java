@@ -1,21 +1,29 @@
 class Solution {
     boolean solution(String s) {
         
-        s= s.toLowerCase();
-        int pcount =0;
-        int ycount =0;
+        int count = 0;
         
-        for(int i=0 ; i<s.length(); i++){
+        s = s.toLowerCase();
+        
+        for(int i=0; i<s.length(); i++){
             
-            if(s.charAt(i)=='p'){
-                pcount++;
-            }else if(s.charAt(i)=='y'){
-                ycount++;
+            char ch = s.charAt(i);
+            
+            if(ch=='p'){
+                
+                count++;
+                
+                
+            }else if(ch=='y'){
+                
+                count--;
+                
             }
             
         }
+        
+    
 
-
-        return pcount==ycount ? true : false ;
+        return count==0 ? true : false;
     }
 }
