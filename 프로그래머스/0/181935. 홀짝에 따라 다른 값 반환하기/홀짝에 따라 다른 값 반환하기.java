@@ -1,28 +1,13 @@
+import java.util.stream.IntStream;
+
 class Solution {
     public int solution(int n) {
-        int answer = 0;
         
-        if(n%2!=0){
+        return n % 2 != 0 ? 
+            IntStream.rangeClosed(1,n).filter(i->i%2!=0).sum() :
+            IntStream.rangeClosed(1,n).filter(i->i%2==0).map(i -> i*i).sum();
             
-            for(int i=1; i<=n; i+=2){
-                
-                answer+=i;
-            }
-            
-            
-        }else{
-            
-            for(int i=2; i<=n; i+=2){
-                
-                answer+=(i*i);
-            }
-            
-            
-            
-        }
         
         
-        
-        return answer;
     }
 }
