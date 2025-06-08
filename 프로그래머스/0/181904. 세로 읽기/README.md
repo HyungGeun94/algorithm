@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 73.2 MB, 시간: 0.26 ms
+메모리: 77.7 MB, 시간: 15.06 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 07월 23일 07:18:31
+2025년 06월 08일 14:01:14
 
 ### 문제 설명
 
@@ -65,7 +65,8 @@
 <p>입출력 예 #1</p>
 
 <ul>
-<li><p>예제 1번의 <code>my_string</code>을 한 줄에 4 글자씩 쓰면 다음의 표와 같습니다.</p>
+<li>예제 1번의 <code>my_string</code>을 한 줄에 4 글자씩 쓰면 다음의 표와 같습니다.</li>
+</ul>
 <table class="table">
         <thead><tr>
 <th>1열</th>
@@ -105,10 +106,8 @@
 <td>c</td>
 </tr>
 </tbody>
-      </table>
-<p>2열에 적힌 글자를 세로로 읽으면 happy이므로 "happy"를 return 합니다.</p></li>
-</ul>
-
+      </table><div class="highlight"><pre class="codehilite"><code>2열에 적힌 글자를 세로로 읽으면 happy이므로 "happy"를 return 합니다.
+</code></pre></div>
 <p>입출력 예 #2</p>
 
 <ul>
