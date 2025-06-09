@@ -1,20 +1,19 @@
 import java.util.*;
 
-
 class Solution {
     public int solution(int[] array, int n) {
-        int minus = 10000;
-        
         int answer = 0;
         
         Arrays.sort(array);
         
+        int min = 99999;
+        
         for(int i=0; i<array.length; i++){
             
-            if( Math.abs(n-array[i]) < minus ){
+            if(Math.abs(array[i]-n)<min){
                 
-                minus = Math.abs(n-array[i]);
                 answer=array[i];
+                min = Math.abs(array[i]-n);
             }
             
         }
