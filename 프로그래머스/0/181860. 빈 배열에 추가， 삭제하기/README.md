@@ -4,7 +4,7 @@
 
 ### 성능 요약
 
-메모리: 76.8 MB, 시간: 0.59 ms
+메모리: 87.1 MB, 시간: 3.52 ms
 
 ### 구분
 
@@ -16,7 +16,7 @@
 
 ### 제출 일자
 
-2024년 07월 25일 07:12:41
+2025년 06월 10일 21:34:59
 
 ### 문제 설명
 
@@ -56,7 +56,8 @@
 <p>입출력 예 #1</p>
 
 <ul>
-<li><p>예제 1번에서 X의 변화를 표로 나타내면 다음과 같습니다</p>
+<li>예제 1번에서 X의 변화를 표로 나타내면 다음과 같습니다</li>
+</ul>
 <table class="table">
         <thead><tr>
 <th>i</th>
@@ -102,9 +103,7 @@
 <td>[3, 3, 3, 3, 4, 4, 4, 4]</td>
 </tr>
 </tbody>
-      </table>
-<p>따라서 [3, 3, 3, 3, 4, 4, 4, 4]를 return 합니다.</p></li>
-</ul>
-
+      </table><div class="highlight"><pre class="codehilite"><code>따라서 [3, 3, 3, 3, 4, 4, 4, 4]를 return 합니다.
+</code></pre></div>
 
 > 출처: 프로그래머스 코딩 테스트 연습, https://school.programmers.co.kr/learn/challenges
