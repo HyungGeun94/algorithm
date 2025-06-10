@@ -2,31 +2,9 @@ import java.util.*;
 
 class Solution {
     public int[] solution(String[] intStrs, int k, int s, int l) {
-        
-        List<Integer> list = new ArrayList<>();
-        
-        for(int i=0; i<intStrs.length; i++){
-            
-            int num = Integer.parseInt(intStrs[i].substring(s,s+l));
-            
-            if(num>k){
-                
-                list.add(num);
-                
-            }
-            
-        }
-        
-        
-        
-        int[] answer = new int[list.size()];
-        
-        for(int i=0; i<answer.length; i++){
-            
-            answer[i]=list.get(i);
-            
-        }
-        
-        return answer;
+        return Arrays.stream(intStrs)
+             .mapToInt(str -> Integer.parseInt(str.substring(s, s + l)))
+             .filter(num -> num > k)
+             .toArray();
     }
 }
