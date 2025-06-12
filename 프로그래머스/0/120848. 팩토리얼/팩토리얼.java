@@ -1,32 +1,17 @@
 class Solution {
     public int solution(int n) {
         
-        
-        int answer = 1;
-        
-        int num=1;
-        
-        while(true){
+       int answer=1;
+        for(int i=2; i<=11; i++){
             
-            if(answer*num<=n){
-                
-                
+            answer = answer*i;
             
-                answer*=num;
-                
-                num++;
-                
-                
-            }else{
-                answer=num-1;
-                break;
-                
+            if(answer>n){
+                return i-1;
             }
-         
-        }
-        
-        
-        
+            
+            
+            }
         return answer;
     }
 }
