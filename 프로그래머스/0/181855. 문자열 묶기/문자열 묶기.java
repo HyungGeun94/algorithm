@@ -2,19 +2,18 @@ import java.util.*;
 
 class Solution {
     public int solution(String[] strArr) {
-        int answer = 0;
-        
-        int [] arr = new int[31];
-        
-        for(String s : strArr){
-            
-            arr[s.length()]+=1;
-            
-            
+        Map<Integer, Integer> lengthCount = new HashMap<>();
+
+        for (String s : strArr) {
+            int len = s.length();
+            lengthCount.put(len, lengthCount.getOrDefault(len, 0) + 1);
         }
-        
-        Arrays.sort(arr);
-        
-        return arr[arr.length-1];
+
+        int max = 0;
+        for (int count : lengthCount.values()) {
+            max = Math.max(max, count);
+        }
+
+        return max;
     }
 }
