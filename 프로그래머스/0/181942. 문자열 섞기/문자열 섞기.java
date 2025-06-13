@@ -1,9 +1,7 @@
 class Solution {
     public String solution(String str1, String str2) {
-        
-        StringBuffer sb = new StringBuffer();
-        
-        
+
+        StringBuilder sb = new StringBuilder();
         
         for(int i=0; i<str1.length(); i++){
             
@@ -11,10 +9,6 @@ class Solution {
             sb.append(str2.charAt(i));
             
         }
-        
-        
-        
-        
         return sb.toString();
     }
 }
