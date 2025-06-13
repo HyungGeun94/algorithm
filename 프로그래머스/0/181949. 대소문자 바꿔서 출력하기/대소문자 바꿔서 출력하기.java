@@ -5,21 +5,15 @@ public class Solution {
         Scanner sc = new Scanner(System.in);
         String a = sc.next();
         
-        StringBuffer sb = new StringBuffer();
+        StringBuilder sb = new StringBuilder();
         for(int i=0; i<a.length(); i++){
             
             char ch = a.charAt(i);
-            
-            if(ch>='a' && ch<='z'){
-                
+            if(ch>='a' && ch<'z'){
                 sb.append(Character.toUpperCase(ch));
-            
             }else{
-                
                 sb.append(Character.toLowerCase(ch));
-                
             }
-            
             
         }
         
