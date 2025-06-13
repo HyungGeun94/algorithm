@@ -1,29 +1,22 @@
 class Solution {
     public int solution(int num) {
+        
+        long num1 = num;
         int answer = 0;
         
-        long number = num;
-        
-        
-        while(true){
+        while(num1 !=1){
             
-            if(number==1){
-                break;
-            }else if(answer>500){
-                answer=-1;
-                break;
+             if(answer==500) return -1;
+            
+            if(num1%2==0){
+                num1= num1 / 2;
             }else{
-                if(number%2==0){
-                    number= number/2;
-                    answer++;
-                }else{
-                    number= (number*3+1);
-                    answer++;
-                }
+                num1 = (num1 *3) +1;
             }
-            
-            
+            answer++;
         }
+        
+       
         
         
         return answer;
