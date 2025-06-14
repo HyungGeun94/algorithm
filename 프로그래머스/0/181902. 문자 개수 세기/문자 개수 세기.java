@@ -2,15 +2,16 @@ class Solution {
     public int[] solution(String my_string) {
         int[] answer = new int[52];
         
-        for(int i=0; i<my_string.length(); i++){
+        for(int i=0; i< my_string.length(); i++){
             
-            if(my_string.charAt(i)>='a'&& my_string.charAt(i)<='z'){
-            answer[my_string.charAt(i)-'a'+26]+=1;
+            char ch = my_string.charAt(i);
+            
+            if(ch>='A' && ch<='Z'){
+                answer[ch-'A'] +=1;
+            }else{
+                answer[ch-'a'+26] +=1;
             }
-            else{
-            answer[my_string.charAt(i)-'A']+=1;
-
-            }
+            
             
         }
         
