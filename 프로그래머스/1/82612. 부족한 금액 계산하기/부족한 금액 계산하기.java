@@ -1,13 +1,18 @@
 class Solution {
     public long solution(int price, int money, int count) {
-        long answer = money;
-
-        for(int i=0; i<count; i++){
+        long answer = 0;
+        long money1 = money;
+        
+        for(int i=1; i<=count; i++){
             
-            answer-=(price*(i+1));
+            money1= money1 - price*i;
             
         }
         
-        return answer<0 ? Math.abs(answer) : 0 ;
+        if(money1<=0){
+            answer=money1;
+        }
+
+        return Math.abs(answer);
     }
 }
