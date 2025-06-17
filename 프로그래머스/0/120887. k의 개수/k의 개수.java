@@ -2,21 +2,19 @@ class Solution {
     public int solution(int i, int j, int k) {
         int answer = 0;
         
-        
-        for(int z=i; z<=j; z++){
+        for(int s=i; s<=j; s++){
             
-            String str = z+"";
+            String str = String.valueOf(s);
             
-            for(int x=0; x<str.length(); x++){
+            for(char ch : str.toCharArray()){
                 
-                if(str.charAt(x)-'0'==k){
+                if(ch-'0'==k){
                     answer++;
                 }
+                
             }
             
         }
-        
-        
         
         return answer;
     }
