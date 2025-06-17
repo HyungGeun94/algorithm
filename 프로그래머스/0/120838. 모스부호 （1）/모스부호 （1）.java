@@ -1,28 +1,25 @@
 class Solution {
     public String solution(String letter) {
+        String answer = "";
         
-        StringBuffer sb = new StringBuffer();
+        String[] morseArr = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
         
-
-        String[] morse = {".-","-...","-.-.","-..",".","..-.","--.","....","..",".---","-.-",".-..","--","-.","---",".--.","--.-",".-.","...","-","..-","...-",".--","-..-","-.--","--.."};
+        String[] letterArr = letter.split(" ");
         
-        String str[] = letter.split(" ");
-        
-        for(int i=0; i<str.length; i++){
+        for(String str : letterArr){
             
-            for(int j=0; j<morse.length; j++){
-            
-                if(str[i].equals(morse[j])){
+            for(int i=0; i< morseArr.length;  i++){
                 
-                    sb.append((char)('a'+j));
-                
+                if(str.equals(morseArr[i])){
+                    answer = answer + (char)('a' + i);
+                    break;
                 }
-               
-               }
-            
+                
+            }
             
         }
         
-        return sb.toString();
+        
+        return answer;
     }
 }
