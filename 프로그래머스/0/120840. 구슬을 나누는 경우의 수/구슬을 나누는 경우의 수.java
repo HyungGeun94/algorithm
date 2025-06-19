@@ -1,12 +1,17 @@
-class Solution {
+import java.math.BigInteger;
+
+public class Solution {
     public int solution(int balls, int share) {
-        long answer = 1;
-        
-        for (int i = 0; i < share; i++) {
-            answer *= (balls - i);
-            answer /= (i + 1);
+        BigInteger numerator = factorial(balls);
+        BigInteger denominator = factorial(share).multiply(factorial(balls - share));
+        return numerator.divide(denominator).intValue();
+    }
+
+    private BigInteger factorial(int n) {
+        BigInteger result = BigInteger.ONE;
+        for (int i = 2; i <= n; i++) {
+            result = result.multiply(BigInteger.valueOf(i));
         }
-        
-        return (int) answer;
+        return result;
     }
 }
