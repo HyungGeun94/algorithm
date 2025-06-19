@@ -3,19 +3,25 @@ import java.util.*;
 class Solution {
     public int[] solution(int n) {
         
-        List<Integer> array = new ArrayList<>();
+        Set<Integer> set = new HashSet<>();
         
-        for (int i = 2; i <= n; i++) {
-            
-            while (n % i == 0) {
-                if (!array.contains(i)) {
-                    array.add(i);  
-                }
-                n /= i;  
+        int origin_n = n;
+        
+        for(int i=2; i<=origin_n; i++){
+        
+            if(n%i==0){
+                set.add(i);
+                n=n/i;
+                i--;
             }
+            
+            if(n==1){
+                break;
+            }
+            
+            
         }
         
-       
-        return array.stream().mapToInt(i -> i).toArray();
+        return set.stream().mapToInt(i -> i).sorted().toArray();
     }
 }
