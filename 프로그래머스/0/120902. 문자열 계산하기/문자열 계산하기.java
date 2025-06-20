@@ -1,27 +1,28 @@
 import java.util.*;
 
+
 class Solution {
     public int solution(String my_string) {
+        int answer = 0;
         
-
-
         String[] strArr = my_string.split(" ");
         
-        int answer = Integer.parseInt(strArr[0]);
+        Stack stack = new Stack();
+        
+        for(int i=0; i<strArr.length; i++){
+            
+            if(stack.isEmpty()){
+                answer+=Integer.parseInt(strArr[i]);
+            }else if(stack.peek().equals("-")){
+                answer-=Integer.parseInt(strArr[i]);
+            }else if(stack.peek().equals("+")){
+                answer+=Integer.parseInt(strArr[i]);
+            }                
+            stack.add(strArr[i]);
 
-        
-        
-        for(int i=1; i<strArr.length; i++){
-            
-            if(strArr[i].equals("+")){
-                answer += (Integer.parseInt(strArr[i+1]));
-            }else if(strArr[i].equals("-")){
-                answer -= (Integer.parseInt(strArr[i+1]));
-            }
-            
-            i++;
             
         }
+        
         
         return answer;
     }
