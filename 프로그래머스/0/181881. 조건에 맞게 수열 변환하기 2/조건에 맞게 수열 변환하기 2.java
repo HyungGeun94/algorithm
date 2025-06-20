@@ -1,30 +1,36 @@
-import java.util.Arrays;
+import java.util.*;
 
 class Solution {
     public int solution(int[] arr) {
-        int count = 0;
-        boolean isChanged = true;
+        int answer = 0;
+        
+        int[] originArr = Arrays.copyOf(arr,arr.length);
+        int[] resultArr = new int[originArr.length];
+        
+        boolean parameter = true;
+        int idx=0;
+        while(parameter){
+            for(int i=0; i<originArr.length; i++){
 
-        while (isChanged) {
-            isChanged = false;
-            int[] prevArr = Arrays.copyOf(arr, arr.length);
-
-            for (int i = 0; i < arr.length; i++) {
-                if (arr[i] >= 50 && arr[i] % 2 == 0) {
-                    arr[i] /= 2; 
-                } else if (arr[i] < 50 && arr[i] % 2 != 0) {
-                    arr[i] = arr[i] * 2 + 1; 
+                if(originArr[i]%2==0 &&originArr[i]>=50){
+                    resultArr[i]=originArr[i]/2;
+                }else if(originArr[i]%2!=0 && originArr[i]<50){
+                    resultArr[i]=(originArr[i]*2)+1;
+                }else{
+                    resultArr[i]=originArr[i];
                 }
+
             }
-
-
-            if (!Arrays.equals(arr, prevArr)) {
-                isChanged = true; 
+            idx++;
+            
+            if(Arrays.equals(originArr,resultArr)){
+                parameter=false;   
             }
-
-            count++; 
+            
+            originArr= Arrays.copyOf(resultArr,resultArr.length);
+            
         }
-
-        return count - 1; // 반복이 멈추는 순간은 한 번 더 카운트되므로 1을 뺌
+        
+        return --idx;
     }
 }
