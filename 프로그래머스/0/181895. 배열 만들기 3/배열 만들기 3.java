@@ -1,25 +1,27 @@
 import java.util.*;
 
-
 class Solution {
     public int[] solution(int[] arr, int[][] intervals) {
+        int[] answer = {};
+        
+        
+        int x1 = intervals[0][0];
+        int x2 = intervals[0][1];
+        
+        int y1 = intervals[1][0];
+        int y2 = intervals[1][1];
         
         List<Integer> list = new ArrayList<>();
         
-        int[] copyArr1 = Arrays.copyOfRange(arr,intervals[0][0],intervals[0][1]+1);
-        int[] copyArr2 = Arrays.copyOfRange(arr,intervals[1][0],intervals[1][1]+1);
-        
-        int[] answer = new int[copyArr1.length + copyArr2.length];
-        
-        for(int i=0; i<copyArr1.length; i++){
-            answer[i]=copyArr1[i];
+        for(int i=x1; i<=x2; i++){
+            list.add(arr[i]);
         }
-        for(int i=0; i<copyArr2.length; i++){
+        
+        for(int i=y1; i<=y2; i++){
+            list.add(arr[i]);
+        }
             
-            answer[i+copyArr1.length]=copyArr2[i];
-        }
         
-        
-        return answer;
+        return list.stream().mapToInt(i -> i).toArray();
     }
 }
