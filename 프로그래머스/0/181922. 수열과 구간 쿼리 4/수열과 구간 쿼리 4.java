@@ -3,16 +3,20 @@ class Solution {
         
         for(int i=0; i<queries.length; i++){
             
-            for(int j=queries[i][0]; j<=queries[i][1]; j++){
+            int s =queries[i][0];
+            int e =queries[i][1];
+            int k =queries[i][2];
+            
+            for(int j=s; j<=e; j++){
                 
-                if(j%queries[i][2]==0){
-                    
-                    arr[j]+=1;
+                if(j%k==0){
+                    arr[j]++;
                 }
                 
             }
             
         }
+        
         return arr;
     }
 }
