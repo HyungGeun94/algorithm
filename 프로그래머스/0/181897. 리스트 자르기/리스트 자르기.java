@@ -2,27 +2,35 @@ import java.util.*;
 
 class Solution {
     public int[] solution(int n, int[] slicer, int[] num_list) {
-        
-        if(n==1){
-            
-            return Arrays.copyOfRange(num_list,0,slicer[1]+1);
-            
-        }else if(n==2){
-            
-            return Arrays.copyOfRange(num_list,slicer[0],num_list.length);
-            
-        }else if(n==3){
-            
-            return Arrays.copyOfRange(num_list,slicer[0],slicer[1]+1);
+        int a = slicer[0];
+        int b = slicer[1];
+        int c = slicer[2];
 
-        }else{
-                List<Integer> result = new ArrayList<>();
-                for (int i = slicer[0]; i <= slicer[1]; i += slicer[2]) {
+        List<Integer> result = new ArrayList<>();
+
+        switch (n) {
+            case 1:
+                for (int i = 0; i <= b; i++) {
                     result.add(num_list[i]);
                 }
-                return result.stream().mapToInt(i -> i).toArray();
+                break;
+            case 2:
+                for (int i = a; i < num_list.length; i++) {
+                    result.add(num_list[i]);
+                }
+                break;
+            case 3:
+                for (int i = a; i <= b; i++) {
+                    result.add(num_list[i]);
+                }
+                break;
+            case 4:
+                for (int i = a; i <= b; i += c) {
+                    result.add(num_list[i]);
+                }
+                break;
         }
-        
-        
+
+        return result.stream().mapToInt(Integer::intValue).toArray();
     }
 }
