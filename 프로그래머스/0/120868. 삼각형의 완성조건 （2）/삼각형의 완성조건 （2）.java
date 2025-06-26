@@ -1,24 +1,23 @@
 import java.util.*;
 
-
 class Solution {
     public int solution(int[] sides) {
         int answer = 0;
         
         Arrays.sort(sides);
         
-        for(int i=1;  i<=sides[1]; i++){
-            if(i+sides[0]>sides[1]){
-            answer++;
-            System.out.println(i);
-
-            }
-        }
+        int min = sides[0];
+        int max = sides[1];
         
-        for(int i=sides[1]+1; i<sides[0]+sides[1]; i++){
+        for(int i=1 ; i<=max; i++){
+            
+            if(i+min>max){
+                answer++;
+            }
+        }        
+        
+        for(int i=max+1 ; i<max+min; i++){
             answer++;
-                        System.out.println(i);
-
         }
         
         
