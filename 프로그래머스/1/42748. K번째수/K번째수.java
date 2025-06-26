@@ -4,20 +4,19 @@ class Solution {
     public int[] solution(int[] array, int[][] commands) {
         int[] answer = new int[commands.length];
         
-        int[] arr = null;
-        
-        for(int i=0; i<commands.length; i++){
-            
-                arr = Arrays.copyOfRange(array,commands[i][0]-1,commands[i][1]);
+        for(int z=0; z<commands.length; z++){
                 
+                int i=commands[z][0];
+                int j=commands[z][1];
+                int k=commands[z][2];
+                
+                int[] arr = Arrays.copyOfRange(array,i-1,j);
                 Arrays.sort(arr);
+                answer[z]=arr[k-1];
                 
-                answer[i]=arr[commands[i][2]-1];
                 
-            
+                
         }
-        
-        
         
         return answer;
     }
