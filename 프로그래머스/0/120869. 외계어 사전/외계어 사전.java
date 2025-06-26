@@ -1,28 +1,27 @@
+import java.util.*;
+
 class Solution {
     public int solution(String[] spell, String[] dic) {
         int answer = 2;
         
-        for(int j=0; j<dic.length; j++){
-            for(int i=0; i<spell.length; i++){
-                
-                
-                if(!dic[j].contains(spell[i])){
-                    answer=2;
-                    break;
-                }
-                else{
-                    answer=1;
-                }
+        Arrays.sort(spell);
+        
+        for(int i=0; i<dic.length; i++){
+            
+            String str = dic[i];
+            
+            String[] strArray = str.chars()
+                                .mapToObj(ch -> String.valueOf((char)ch))
+                                .sorted()
+                                .toArray(size -> new String[size]);
+            
+            if(Arrays.equals(spell,strArray)){
+                return 1;
             }
             
-            if(answer==1){
-                break;
-            }
+            
             
         }
-        
-        
-        
         
         return answer;
     }
