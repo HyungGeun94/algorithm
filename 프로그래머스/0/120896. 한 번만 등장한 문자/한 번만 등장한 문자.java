@@ -1,32 +1,19 @@
 import java.util.*;
+import java.util.stream.*;
 
 class Solution {
     public String solution(String s) {
-        
-     String answer = "";
-
-
         Map<Character, Integer> map = new HashMap<>();
 
-        for(int i=0; i<s.length(); i++){
-
-            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
-
+        for (char c : s.toCharArray()) {
+            map.put(c, map.getOrDefault(c, 0) + 1);
         }
 
-        List<Character> list = new ArrayList<>(map.keySet());
-        Collections.sort(list);
-
-        for (int i=0; i<list.size(); i++) {
-
-            if(map.get(list.get(i))==1){
-                answer+=list.get(i);
-
-            }
-
-        }
-        
-        return answer;
-      
+        return map.entrySet().stream()
+          .filter(entry -> entry.getValue() == 1)
+          .map(entry -> entry.getKey())
+          .sorted()
+          .map(c -> String.valueOf(c))
+          .collect(Collectors.joining());
     }
 }
