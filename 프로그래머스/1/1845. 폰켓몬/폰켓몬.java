@@ -4,17 +4,14 @@ class Solution {
     public int solution(int[] nums) {
         int answer = 0;
         
-        int max = nums.length/2;
-        
         Set<Integer> set = new HashSet<>();
         
+        int maxSelect = nums.length/2;
+        
         for(int i : nums){
-            
             set.add(i);
         }
         
-        
-        
-        return set.size()>=max ? max : set.size();
+        return set.size()>= maxSelect ? maxSelect : set.size();
     }
 }
