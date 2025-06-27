@@ -1,34 +1,27 @@
 class Solution {
     public int solution(String s) {
-
-        String[] str = {"zero", "one", "two", "three", "four", "five", "six", "seven", "eight", "nine"};
-       
-        StringBuffer answerSb = new StringBuffer();
+        String answer = "";
         
-        StringBuffer sentenceSb= new StringBuffer();
+        String[] strArr = {"zero","one","two","three","four","five","six","seven","eight","nine"};
         
-        
-        int size = s.length();
-        for(int i=0; i<size;i++){
-            char ch = s.charAt(i);
-            if(ch>='a' && ch<='z'){
+        for(int i=0; i<s.length(); i++){
+            
+            String strSub = s.substring(i);
+            System.out.println(strSub);
+            for(int j=0; j<strArr.length; j++){
                 
-                sentenceSb.append(s.charAt(i));
-                
-                for(int j=0; j<str.length; j++){
-                    
-                    if((sentenceSb.toString().equals(str[j]))){
-                        
-                        answerSb.append(j);
-                        sentenceSb= new StringBuffer();
+                    if(strSub.startsWith(strArr[j])){
+                        answer+=j;
+                        break;
+                    }else if(strSub.charAt(0)>='0' && strSub.charAt(0)<='9'){
+                        answer+=strSub.charAt(0);
+                        break;
                     }
                 }
-                
-            }else{
-                answerSb.append(ch);
-            }
+            
+            
         }
-        
-        return Integer.parseInt(answerSb.toString());
+        // return 0;
+        return Integer.parseInt(answer);
     }
 }
