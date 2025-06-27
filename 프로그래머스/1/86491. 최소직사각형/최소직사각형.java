@@ -1,23 +1,26 @@
+import java.util.*;
+
 class Solution {
     public int solution(int[][] sizes) {
+        int answer = 0;
         
-        int x=0;
-        int y=0;
-        
+        int[] sizesW =new int[sizes.length];
+        int[] sizesH =new int[sizes.length];
         
         for(int i=0; i<sizes.length; i++){
             
-            int max = sizes[i][0] > sizes[i][1] ? sizes[i][0] : sizes[i][1];
-            int min = sizes[i][0] < sizes[i][1] ? sizes[i][0] : sizes[i][1];
+            int w = sizes[i][0];
+            int h = sizes[i][1];
             
-            x = max > x ? max : x ;
-            y = min > y ? min : y ; 
-            
-            
-            
+            sizesW[i]=Math.max(w,h);
+            sizesH[i]=Math.min(w,h);
             
         }
         
-        return x*y;
+        Arrays.sort(sizesW);
+        Arrays.sort(sizesH);
+        
+        
+        return sizesW[sizesW.length-1] * sizesH[sizesH.length-1];
     }
 }
