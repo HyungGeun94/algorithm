@@ -1,23 +1,32 @@
 class Solution {
     public String solution(String s) {
-        StringBuilder sb = new StringBuilder();
-        int index = 0;
-
-        for (int i = 0; i < s.length(); i++) {
-            char c = s.charAt(i);
-
-            if (c == ' ') {
-                sb.append(' ');
-                index = 0; 
-            } else {
-                if (index % 2 == 0) {
-                    sb.append(Character.toUpperCase(c));
-                } else {
-                    sb.append(Character.toLowerCase(c));
-                }
-                index++;
+        
+        s= s.toLowerCase();
+        
+        int idx=0;
+        String answer ="";
+        
+        for(int i=0; i<s.length(); i++){
+            
+            char ch = s.charAt(i);
+            
+            
+            if(ch==' '){
+                idx=0;
+                answer+=' ';
+            }else if(idx %2==0){
+                System.out.println(ch);
+                answer+=Character.toUpperCase(ch);
+                idx++;
+                
+            }else{
+                answer+=ch;
+                idx++;
             }
+            
         }
-        return sb.toString();
+        
+        
+        return answer;
     }
 }
