@@ -1,26 +1,38 @@
 import java.util.*;
 
-
 class Solution {
     public int[] solution(int l, int r) {
         
-        ArrayList<Integer> result = new ArrayList<>();
-
-        for (int i = l; i <= r; i++) {
-            String str = i+"";
-            if (str.matches("[05]+")) {
-                result.add(i);
+        List<Integer> list = new ArrayList<>();
+        
+        for(int i=l; i<=r ; i++){
+            
+            boolean isAddList = true;
+            
+            String str =String.valueOf(i);
+            
+            for(int j=0; j<str.length(); j++){
+                
+                char ch = str.charAt(j);
+                
+                if(!(ch=='5' || ch=='0')){
+                    
+                    isAddList = false;
+                    
+                    break;
+                    
+                }
+                
             }
-        }
-
-        if (result.isEmpty()) {
-            return new int[]{-1};
-        } else {
-            int[] answer = new int[result.size()];
-            for (int i = 0; i < result.size(); i++) {
-                answer[i] = result.get(i);
+            
+            if(isAddList){
+                list.add(i);
             }
-            return answer;
+            
+            
+            
         }
+        
+        return list.size()== 0 ? new int[]{-1} : list.stream().mapToInt(i->i).toArray();
     }
 }
