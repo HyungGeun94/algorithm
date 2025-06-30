@@ -2,19 +2,19 @@ class Solution {
     public int solution(int a, int b, int n) {
         int answer = 0;
         
+        int sum = 0;
+        int cola = 0;
+        int bincola =n;
         
-        while(n>=a){
+        
+        while(bincola>=a){
             
-            n = n-a;
-            answer+=b;
-            n = n+b;
-            
-            
-            
+            cola = (bincola/a) *b;
+            sum +=cola;
+            bincola = bincola%a +cola;
             
         }
         
-        
-        return answer;
+        return sum;
     }
 }
