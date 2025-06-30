@@ -4,28 +4,23 @@ class Solution {
         
         for(int i=1; i<food.length; i++){
             
-            food[i]=food[i]/2;
-            
-        }
-        
-        for(int i=1; i<food.length; i++){
-            
-            for(int j=0; j<food[i]; j++){
-                answer+=i;
-                
+            if(food[i]/2>=1){
+             answer+=String.valueOf(i).repeat(food[i]/2);
             }
             
-        }
-        answer+=0;
-        
-        for(int i=food.length-1; i>=1; i--){
             
-            for(int j=0; j<food[i]; j++){
-                answer+=i;
-                
-            }            
         }
+        answer+="0";
         
+        for(int i=food.length-1; i>=0; i--){
+            
+             if(food[i]/2>=1){
+             answer+=String.valueOf(i).repeat(food[i]/2);
+            }
+            
+            
+            
+        }
         
         return answer;
     }
