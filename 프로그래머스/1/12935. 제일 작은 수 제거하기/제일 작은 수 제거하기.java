@@ -3,35 +3,27 @@ import java.util.*;
 class Solution {
     public int[] solution(int[] arr) {
         
+        int min = 2100000000;
+        
+        
         if(arr.length==1){
-            return new int[]{-1};
-        }
-        
-        int min= arr[0];
-        int idx= 0;
-        
-        for(int i=1; i<arr.length; i++){
+            return new int[]{-1}; 
+        }else{
             
-            if(arr[i]<min){
-                min=arr[i];
-                idx=i;
+            for(int i=0; i<arr.length; i++){
+                
+                if(arr[i]<min){
+                    min=arr[i];
+                }
             }
-        }
             
-        int[] answer = new int[arr.length-1];
-        
-        for(int i=0; i<answer.length; i++){
             
-            if(i<idx)
-            answer[i]=arr[i];
-            else
-            answer[i]=arr[i+1];
+            
+            int realmin = min;
+            
+            return Arrays.stream(arr).filter(number -> number!=realmin).toArray();
             
         }
         
-        
-        
-        
-        return answer;
     }
 }
