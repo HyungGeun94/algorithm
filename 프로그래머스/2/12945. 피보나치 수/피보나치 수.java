@@ -2,18 +2,18 @@ class Solution {
     public int solution(int n) {
         int answer = 0;
         
-        long zero=0;
-        long first=1;
-        long second=0;
+        int f_0 = 0;
+        int f_1 = 1;
+        int f_2 = f_0+f_1;
         
-        for(int i=2; i<n; i++){
+        
+        for(int i=3; i<=n; i++){
+            f_0=f_1;
+            f_1=f_2;
+            f_2 = (f_0+f_1)%1234567;
             
-            second=(zero+first)%1234567;
-            
-            zero=first;
-            first=second;
         }
         
-        return (int)(zero+first)%1234567;
+        return f_2;
     }
 }
