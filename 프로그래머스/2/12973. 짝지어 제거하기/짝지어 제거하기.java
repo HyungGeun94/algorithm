@@ -6,12 +6,12 @@ class Solution {
 
         for (char ch : s.toCharArray()) {
             if (!stack.isEmpty() && stack.peek() == ch) {
-                stack.pop(); 
+                stack.pop();
             } else {
-                stack.push(ch); 
+                stack.push(ch);
             }
         }
 
-        return stack.isEmpty() ? 1 : 0; 
+        return stack.isEmpty() ? 1 : 0;
     }
 }
