@@ -1,31 +1,26 @@
-import java.util.*;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
+        Scanner sc = new Scanner(System.in);
 
-        int N = scanner.nextInt(); 
-        int[] scores = new int[N]; 
+        int n = sc.nextInt();
+        double[] scores = new double[n];
 
-        for (int i = 0; i < N; i++) {
-            scores[i] = scanner.nextInt();
-        }
-
-        int maxScore = scores[0];
-        for (int i = 1; i < N; i++) {
-            if (scores[i] > maxScore) {
-                maxScore = scores[i];
+        double max = 0;
+        for (int i = 0; i < n; i++) {
+            scores[i] = sc.nextDouble();
+            if (scores[i] > max) {
+                max = scores[i];
             }
         }
 
         double sum = 0;
-        for (int score : scores) {
-            sum += (double) score / maxScore * 100;
+        for (int i = 0; i < n; i++) {
+            sum += (scores[i] / max) * 100;
         }
-        double average = sum / N;
 
-        System.out.printf("%.6f\n", average);
-
-        scanner.close();
+        double average = sum / n;
+        System.out.println(average);
     }
 }
