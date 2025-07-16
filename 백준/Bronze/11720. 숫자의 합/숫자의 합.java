@@ -1,27 +1,19 @@
-import java.util.*;
+import java.util.Scanner;
 
-class Main {
+public class Main {
     public static void main(String[] args) {
-
-        Scanner sc= new Scanner(System.in);
-
-        int cnt = sc.nextInt();
-
-        String str = sc.next();
-
-        int answer = 0;
-
-        for(int i=0; i<str.length(); i++){
-
-          answer+= str.charAt(i)-'0';
-
+        Scanner sc = new Scanner(System.in);
+        
+        int N = sc.nextInt();
+        
+        String numbers = sc.next();
+        
+        long sum = 0;
+        
+        for (int i = 0; i < N; i++) {
+            sum += numbers.charAt(i) - '0';
         }
-
-        System.out.println(answer);
-
-
-
-
+        
+        System.out.println(sum);
     }
-
 }
